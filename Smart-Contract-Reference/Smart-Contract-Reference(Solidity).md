@@ -4,7 +4,6 @@
 
 ##### in *Solidity*:
 ```solidity
-pragma solidity >=0.4.16 <0.9.0;
 
 contract SimpleStorage {
     uint storedData;
@@ -14,21 +13,6 @@ contract SimpleStorage {
     }
 
     function get() public view returns (uint) {
-        return storedData;
-    }
-}
-```
-
-##### in *Java*:
-```java
-public class SimpleStorage {
-    private Uint256 storedData;
-
-    public void setStoredData (Uint256 storedData) {
-        this.storedData = storedData;
-    }
-
-    public Uint256 getStoredData () {
         return storedData;
     }
 }
@@ -82,12 +66,5 @@ contract Coin {
         balances[receiver] += amount;
         emit Sent(msg.sender, receiver, amount);
     }
-}
-```
-
-##### in *Java*:
-```java
-public class Coin {
-    //Currently In-Development.
 }
 ```
