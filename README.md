@@ -1,4 +1,6 @@
-## Java Abstraction layer for the New-ERC Token proposed for the Ethereum 2 protocol.
+## Java Abstraction work for Ethereum Smart-Contracts.
+
+#### *This work started as a focused version of the [New ERC Token](https://github.com/jeyakatsa/New-ERC-Token).*
 
 ## *Step-By-Step Guide for build*
 
