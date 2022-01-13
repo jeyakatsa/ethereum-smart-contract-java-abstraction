@@ -31,6 +31,31 @@ February - December:
 ### Problem:
 This function in Solidity needs to be converted into Java:
 ```solidity 
+event Sent(address from, address to, uint amount);
+``` 
+
+#### Hypothesis:
+1. Refactor function.
+
+##### Findings
+- A basic syntax function in Java is as follows:
+```java
+ private Event sent(Address from, Address to, Uint256 ammount) {
+     return null;
+ }
+```
+needs to *not* return null.
+##### Test Case/s:
+- TBD (To Be Determined)
+
+### Solution:
+TBD (To Be Determined)
+
+-----------------------------------------------------------------------
+
+### Problem:
+This function in Solidity needs to be converted into Java:
+```solidity 
 mapping (address => uint) public balances;
 ``` 
 
@@ -58,7 +83,6 @@ public Map balances = new Map<Adress, Uint256>();
 ```java
 public Map balances = new Map<Adress, Uint256>();
 ```
-
 -----------------------------------------------------------------------
 
 ## General Notes/References:
