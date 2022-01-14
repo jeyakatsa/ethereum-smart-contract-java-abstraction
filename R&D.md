@@ -31,6 +31,30 @@ February - December:
 ### Problem:
 This function in Solidity needs to be converted into Java:
 ```solidity 
+msg.sender;
+``` 
+
+#### Hypothesis:
+1. Refactor function.
+
+##### Findings:
+- The `msg.sender` global variable — likely the most commonly used special variable — is always the address where a current function call came from. For instance, if a function call came from a user or smart contract with the address `0xdfad6918408496be36eaf400ed886d93d8a6c180` then `msg.sender` equals `0xdfad6918408496be36eaf400ed886d93d8a6c180`.
+- `msg.sender` is most likely a hex, or a `Uint256`
+
+### Solution:
+```java
+// msg almost always returns a Uint function (Uint256 in the case of Java)
+public Subcurrency(){
+    minter = msg.sender;
+}
+```
+*Will refactor if necessary after test against dependency importing is completed*
+
+-----------------------------------------------------------------------
+
+### Problem:
+This function in Solidity needs to be converted into Java:
+```solidity 
 event Sent(address from, address to, uint amount);
 ``` 
 
