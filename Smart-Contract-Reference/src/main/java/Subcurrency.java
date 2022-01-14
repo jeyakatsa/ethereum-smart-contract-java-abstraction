@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Subcurrency {
 
-    //Address, Uint256 & Event dependencies to be imported
+    //Address, Uint256, Event, msg dependencies to be imported
     public Address minter;
     private Map balances = new Map<Address, Uint256>();
 
@@ -13,6 +13,19 @@ public class Subcurrency {
         Address to;
         Uint256 amount;
         return sent;
+    }
+
+    // Constructor code is only run when the contract
+    // is created
+    // msg almost always returns a Uint function (Uint256 in the case of Java)
+    public Subcurrency(){
+        minter = msg.sender;
+    }
+
+    // Sends an amount of newly created coins to an address
+    // Can only be called by the contract creator
+    public Mint(Address receiver, Uint256 amount) {
+        //Code to be added.
     }
 
 
