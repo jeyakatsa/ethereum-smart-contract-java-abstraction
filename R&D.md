@@ -31,13 +31,37 @@ February - December:
 ### Problem:
 This function in Solidity needs to be converted into Java:
 ```solidity 
+msg.sender;
+``` 
+
+#### Hypothesis:
+1. Refactor function.
+
+##### Findings:
+- The `msg.sender` global variable — likely the most commonly used special variable — is always the address where a current function call came from. For instance, if a function call came from a user or smart contract with the address `0xdfad6918408496be36eaf400ed886d93d8a6c180` then `msg.sender` equals `0xdfad6918408496be36eaf400ed886d93d8a6c180`.
+- `msg.sender` is most likely a hex, or a `Uint256`
+
+### Solution:
+```java
+// msg almost always returns a Uint function (Uint256 in the case of Java)
+public Subcurrency(){
+    minter = msg.sender;
+}
+```
+*Will refactor if necessary after test against dependency importing is completed*
+
+-----------------------------------------------------------------------
+
+### Problem:
+This function in Solidity needs to be converted into Java:
+```solidity 
 event Sent(address from, address to, uint amount);
 ``` 
 
 #### Hypothesis:
 1. Refactor function.
 
-##### Findings
+##### Findings:
 - A basic syntax function in Java is as follows:
 ```java
  private Event sent(Address from, Address to, Uint256 ammount) {
@@ -46,10 +70,31 @@ event Sent(address from, address to, uint amount);
 ```
 needs to *not* return null.
 ##### Test Case/s:
-- TBD (To Be Determined)
+- Implementing `return from;` insufficient.
+- Implementing
+```java
+    Address from;
+    Address to;
+    Uint256 amount;
+```
+and returning each within function insufficient.
+- Implementing `Address from = null;` and returning `from` insufficient.
+##### Findings:
+- Is `event` within Solidity an object? https://www.tutorialspoint.com/solidity/solidity_events.htm
+- "Event is an inheritable member of a contract. An event is emitted, it stores the arguments passed in transaction logs. These logs are stored on blockchain and are accessible using address of the contract till the contract is present on the blockchain. An event generated is not accessible from within contracts, not even the one which have created and emitted them."
+- `event` within Solidity is not an object but acts rather like a "Dependency" in Java
 
 ### Solution:
-TBD (To Be Determined)
+Calling dependencies within sent function and returning function as is ie:
+```java
+private Event sent() {
+    Address from;
+    Address to;
+    Uint256 amount;
+    return sent;
+}
+```
+*Will refactor if necessary after test against dependency importing is completed*
 
 -----------------------------------------------------------------------
 
@@ -62,7 +107,7 @@ mapping (address => uint) public balances;
 #### Hypothesis:
 1. Refactor function.
 
-##### Findings
+##### Findings:
 - A basic syntax function for Solidity is as follows:
 ```solidity
 function function-name(parameter-list) scope returns() {
@@ -79,10 +124,11 @@ public Map balances = new Map<Adress, Uint256>();
 ```
 
 ### Solution:
-*Will refactor if necessary after test against dependency importing is completed*
 ```java
 public Map balances = new Map<Adress, Uint256>();
 ```
+*Will refactor if necessary after test against dependency importing is completed*
+
 -----------------------------------------------------------------------
 
 ## General Notes/References:
