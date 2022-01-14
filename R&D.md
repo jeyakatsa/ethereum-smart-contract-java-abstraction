@@ -31,6 +31,23 @@ February - December:
 ### Problem:
 This function in Solidity needs to be converted into Java:
 ```solidity 
+require(msg.sender == minter);
+``` 
+
+#### Hypothesis:
+1. Refactor function.
+
+##### Findings:
+- TBD(To Be Determined)
+
+### Solution:
+TBD (To Be Determined)
+
+--------------------------------
+
+### Problem:
+This function in Solidity needs to be converted into Java:
+```solidity 
 msg.sender;
 ``` 
 
