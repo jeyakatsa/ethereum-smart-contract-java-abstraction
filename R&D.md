@@ -38,7 +38,7 @@ require(msg.sender == minter);
 1. Refactor function.
 
 ##### Findings:
-- TBD(To Be Determined)
+- `msg.sender` contains the address that has originated the call of a smart contract as spoken within this medium article (https://medium.com/coinmonks/solidity-who-the-heck-is-msg-sender-de68d3e98454)
 
 ### Solution:
 TBD (To Be Determined)
