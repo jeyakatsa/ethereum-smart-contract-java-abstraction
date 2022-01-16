@@ -31,6 +31,37 @@ February - December:
 ### Problem:
 This function in Solidity needs to be converted into Java:
 ```solidity 
+require(msg.sender == minter);
+``` 
+
+#### Hypothesis:
+1. Refactor function.
+
+##### Findings:
+- `msg.sender` contains the address that has originated the call of a smart contract as spoken within this medium article (https://medium.com/coinmonks/solidity-who-the-heck-is-msg-sender-de68d3e98454)
+- Solidity `require` is a convenience function that checks invariants, conditions, and throws exceptions.
+- The `require` Solidity function guarantees validity of conditions that cannot be detected before execution. It checks inputs, contract state variables and return values from calls to external contracts.
+- In the following cases, Solidity triggers a require-type of exception: 
+- - When you call require with arguments that result in false. 
+- - When a function called through a message does not end properly.
+- - When you create a contract with new keyword and the process does not end properly.
+- - When you target a codeless contract with an external function.
+- - When your contract gets Ether through a public getter function.
+- - When `.transfer()` ends in failure.
+##### Test Case/s:
+- `require` needs to be a possible dependency in Java.
+
+### Solution:
+```java
+Require(msg.sender == minter);
+```
+*Will refactor if necessary after test against dependency importing is completed*
+
+--------------------------------
+
+### Problem:
+This function in Solidity needs to be converted into Java:
+```solidity 
 msg.sender;
 ``` 
 
