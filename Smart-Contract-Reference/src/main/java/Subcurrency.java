@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Subcurrency {
 
-    //Address, Uint256, Event, msg dependencies to be imported
+    //Address, Uint256, Event, msg, Require dependencies to be imported
     public Address minter;
     private Map balances = new Map<Address, Uint256>();
 
@@ -26,6 +26,7 @@ public class Subcurrency {
     // Can only be called by the contract creator
     public Mint(Address receiver, Uint256 amount) {
         //Code to be added.
+        Require(msg.sender == minter);
     }
 
 
