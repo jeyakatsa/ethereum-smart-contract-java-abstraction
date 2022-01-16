@@ -31,6 +31,25 @@ February - December:
 ### Problem:
 This function in Solidity needs to be converted into Java:
 ```solidity 
+balances[receiver] += amount;
+``` 
+
+#### Hypothesis:
+1. Refactor function.
+
+##### Findings:
+- `balances[receiver] += amount;` insufficient for Java as it receives the `[receiver]` function as an Array when it is currated as a Map within the original `balances` function.
+##### Test Case/s:
+- TBD (To Be Determined)
+
+### Solution:
+TBD(To Be Determined)
+
+--------------------------------
+
+### Problem:
+This function in Solidity needs to be converted into Java:
+```solidity 
 require(msg.sender == minter);
 ``` 
 
