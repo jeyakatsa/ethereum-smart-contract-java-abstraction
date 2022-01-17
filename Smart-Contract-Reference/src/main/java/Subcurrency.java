@@ -1,4 +1,3 @@
-import javax.management.openmbean.ArrayType;
 import java.util.*;
 
 public class Subcurrency {
@@ -30,6 +29,18 @@ public class Subcurrency {
         Require(msg.sender == minter);
         balances.get(receiver) += amount;
     }
+
+    // Errors allow you to provide information about
+    // why an operation failed. They are returned
+    // to the caller of the function.
+    private Uint256 requested;
+    private Uint256 available;
+    public void InsufficientBalance() {
+        if (requested != available){
+            throw new IllegalCallerException("Insufficient Balance");
+        }
+    }
+
 
 
 }
