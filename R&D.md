@@ -9,6 +9,7 @@
 ### Month-By-Month *(2022)*
 January:
 - Begin building Java Abstraction. *[Status: [In-Development](https://github.com/jeyakatsa/Ethereum-Smart-Contract-Java-Abstraction)]*
+- Research & Develop Solidity-Keywords to Java-Dependency conversions *[Status: In-Development]*
 
 February - December:
 - ***Java*** Smart Contract Abstraction Build. *[Status: [In-Development](https://github.com/jeyakatsa/Ethereum-Smart-Contract-Java-Abstraction)]*
@@ -23,8 +24,37 @@ February - December:
 - Open aggregate Repo to arbitrate all language abstractions. *[Status: Announced]*
 - Open aggregate EIP. *[Status: Announced]*
 
+## Solidity-Keywords to Java-Dependency Conversion Problem Solving Process
+
+*Problems & Solutions ordered top-down from recent-to-oldest*
+
+### Problem:
+This Solidity Keyword needs to be converted into a Java Dependency:
+```solidity 
+Address
+``` 
+
+#### Hypothesis:
+1. Refactor Dependency.
+
+##### Findings:
+TBD (To Be Determined)
+##### Test Case/s:
+```java
+//TBD (To Be Determined)
+```
+##### Findings:
+
+### Solution:
+```java
+//TBD (To Be Determined)
+```
+
+--------------------------------
+*Problems & Solutions ordered top-down from recent-to-oldest*
+
 -----------------------------------------------------------------------
-## Problem Solving Process
+## Function Problem Solving Process
 
 *Problems & Solutions ordered top-down from recent-to-oldest*
 
