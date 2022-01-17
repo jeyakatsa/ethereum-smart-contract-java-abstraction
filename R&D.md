@@ -31,6 +31,42 @@ February - December:
 ### Problem:
 This function in Solidity needs to be converted into Java:
 ```solidity 
+error InsufficientBalance(uint requested, uint available);
+``` 
+
+#### Hypothesis:
+1. Refactor function.
+
+##### Findings:
+- `error` within Solidity is essentially a 'dependency' within Java
+##### Test Case/s:
+```java
+private Uint256 requested;
+private Uint256 available;
+public void InsufficientBalance() {
+    if (requested != available){
+        throw new IllegalCallerException("Insufficient Balance");
+    }
+}
+```
+
+### Solution:
+```java
+private Uint256 requested;
+private Uint256 available;
+public void InsufficientBalance() {
+    if (requested != available){
+        throw new IllegalCallerException("Insufficient Balance");
+    }
+}
+```
+*Will refactor if necessary after test against dependency importing is completed*
+
+--------------------------------
+
+### Problem:
+This function in Solidity needs to be converted into Java:
+```solidity 
 balances[receiver] += amount;
 ``` 
 
