@@ -39,11 +39,20 @@ balances[receiver] += amount;
 
 ##### Findings:
 - `balances[receiver] += amount;` insufficient for Java as it receives the `[receiver]` function as an Array when it is currated as a Map within the original `balances` function.
+- `Mapping` is a reference type as array.
 ##### Test Case/s:
-- TBD (To Be Determined)
+- Implementing `private Arrays balances = new List<Address, Uint256>();` as reference insufficient.
+- Implementing `private ArrayType balances = new List<Address, Uint256>();` as reference insufficient.
+- Implementing `private ArrayType balances = new ArrayDeque<Address, Uint256>();` as reference insufficient.
+- Implementing `balances.get(receiver) += amount;` and `private ArrayList balances = new List<Address, Uint256>();` as reference sufficient.
 
 ### Solution:
-TBD(To Be Determined)
+```java
+private ArrayList balances = new List<Address, Uint256>();
+// balances function below reflects function within overall "public" function
+balances.get(receiver) += amount;
+```
+*Will refactor if necessary after test against dependency importing is completed*
 
 --------------------------------
 
