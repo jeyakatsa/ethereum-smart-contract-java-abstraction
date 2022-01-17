@@ -45,7 +45,7 @@ public class Subcurrency {
     // from any caller to an address
     public void Send(Address receiver, Uint256 amount){
         if (amount > balances.get(msg.sender)){
-
+            InsufficientBalance(amount = requested, balances.get(msg.sender) = available);
         }
 
     }
