@@ -47,6 +47,9 @@ public class Subcurrency {
         if (amount > balances.get(msg.sender)){
             InsufficientBalance(amount = requested, balances.get(msg.sender) = available);
         }
+        balances.get(msg.sender) -= amount;
+        balances.get(receiver) += amount;
+        
 
     }
 
