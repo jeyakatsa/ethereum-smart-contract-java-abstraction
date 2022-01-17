@@ -41,6 +41,15 @@ public class Subcurrency {
         }
     }
 
+    // Sends an amount of existing coins
+    // from any caller to an address
+    public void Send(Address receiver, Uint256 amount){
+        if (amount > balances.get(msg.sender)){
+
+        }
+
+    }
+
 
 
 }
