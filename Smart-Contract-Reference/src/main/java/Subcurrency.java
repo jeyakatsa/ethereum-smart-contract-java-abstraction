@@ -1,10 +1,11 @@
+import javax.management.openmbean.ArrayType;
 import java.util.*;
 
 public class Subcurrency {
 
-    //Address, Uint256, Event, msg, Require dependencies to be imported
+    //Address (long), Uint256, Event, msg, Require dependencies to be imported
     public Address minter;
-    private Map balances = new Map<Address, Uint256>();
+    private ArrayList balances = new List<Address, Uint256>();
 
     // Events allow clients to react to specific
     // contract changes you declare
@@ -24,9 +25,10 @@ public class Subcurrency {
 
     // Sends an amount of newly created coins to an address
     // Can only be called by the contract creator
-    public Mint(Address receiver, Uint256 amount) {
+    public void Mint(Address receiver, Uint256 amount) {
         //Code to be added.
         Require(msg.sender == minter);
+        balances.get(receiver) += amount;
     }
 
 
