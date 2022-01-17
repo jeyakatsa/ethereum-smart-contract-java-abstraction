@@ -2,7 +2,8 @@ import java.util.*;
 
 public class Subcurrency {
 
-    //Address (long), Uint256, Event, msg, Require dependencies to be imported
+    //Address (long), Uint256, Event, msg, Require and Emit dependencies to be imported
+    //via Java Abstractions
     public Address minter;
     private ArrayList balances = new List<Address, Uint256>();
 
@@ -49,7 +50,7 @@ public class Subcurrency {
         }
         balances.get(msg.sender) -= amount;
         balances.get(receiver) += amount;
-        
+        Emit Sent(msg.sender, receiver, amount);
 
     }
 
