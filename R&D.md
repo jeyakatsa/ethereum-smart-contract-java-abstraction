@@ -31,6 +31,70 @@ February - December:
 ### Problem:
 This function in Solidity needs to be converted into Java:
 ```solidity 
+error InsufficientBalance(uint requested, uint available);
+``` 
+
+#### Hypothesis:
+1. Refactor function.
+
+##### Findings:
+- `error` within Solidity is essentially a 'dependency' within Java
+##### Test Case/s:
+```java
+private Uint256 requested;
+private Uint256 available;
+public void InsufficientBalance() {
+    if (requested != available){
+        throw new IllegalCallerException("Insufficient Balance");
+    }
+}
+```
+
+### Solution:
+```java
+private Uint256 requested;
+private Uint256 available;
+public void InsufficientBalance() {
+    if (requested != available){
+        throw new IllegalCallerException("Insufficient Balance");
+    }
+}
+```
+*Will refactor if necessary after test against dependency importing is completed*
+
+--------------------------------
+
+### Problem:
+This function in Solidity needs to be converted into Java:
+```solidity 
+balances[receiver] += amount;
+``` 
+
+#### Hypothesis:
+1. Refactor function.
+
+##### Findings:
+- `balances[receiver] += amount;` insufficient for Java as it receives the `[receiver]` function as an Array when it is currated as a Map within the original `balances` function.
+- `Mapping` is a reference type as array.
+##### Test Case/s:
+- Implementing `private Arrays balances = new List<Address, Uint256>();` as reference insufficient.
+- Implementing `private ArrayType balances = new List<Address, Uint256>();` as reference insufficient.
+- Implementing `private ArrayType balances = new ArrayDeque<Address, Uint256>();` as reference insufficient.
+- Implementing `balances.get(receiver) += amount;` and `private ArrayList balances = new List<Address, Uint256>();` as reference sufficient.
+
+### Solution:
+```java
+private ArrayList balances = new List<Address, Uint256>();
+// balances function below reflects function within overall "public" function
+balances.get(receiver) += amount;
+```
+*Will refactor if necessary after test against dependency importing is completed*
+
+--------------------------------
+
+### Problem:
+This function in Solidity needs to be converted into Java:
+```solidity 
 require(msg.sender == minter);
 ``` 
 
