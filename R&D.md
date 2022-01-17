@@ -31,6 +31,44 @@ February - December:
 ### Problem:
 This function in Solidity needs to be converted into Java:
 ```solidity 
+ revert InsufficientBalance({
+    requested: amount,
+    available: balances[msg.sender]
+});
+``` 
+
+#### Hypothesis:
+1. Refactor function.
+
+##### Findings:
+REVERT will undo all state changes, but it will be handled differently than an “invalid opcode” in two ways:
+*1. It will allow you to return a value.*
+*2. It will refund any remaining gas to the caller.*
+1. It will allow you to return a value
+Most smart contract developers are quite familiar with the notoriously unhelpful invalid opcode error. Fortunately, we’ll soon be able to return an error message, or a number corresponding to an error type. That, will look something like this: `revert(‘Something bad happened’);`or `require(condition, ‘Something bad happened’);`
+2. Refund the remaining gas to the caller
+Currently, when your contract throws, it uses up any remaining gas. This can result in a very generous donation to miners, and often ends up costing users a lot of money.
+- Essentially, `revert` is like an error...
+##### Test Case/s:
+Quite possibly:
+```java
+InsufficientBalance(requested = amount, available = balances.get(msg.sender));
+```
+could work...
+##### Findings:
+Reminder that `:` operand is essentially "If Condition is true? Then value X : Otherwise value Y"
+
+### Solution:
+```java
+InsufficientBalance(amount = requested, balances.get(msg.sender) = available);
+```
+*Will refactor if necessary after test against dependency importing is completed*
+
+--------------------------------
+
+### Problem:
+This function in Solidity needs to be converted into Java:
+```solidity 
 error InsufficientBalance(uint requested, uint available);
 ``` 
 
@@ -40,6 +78,7 @@ error InsufficientBalance(uint requested, uint available);
 ##### Findings:
 - `error` within Solidity is essentially a 'dependency' within Java
 ##### Test Case/s:
+Function:
 ```java
 private Uint256 requested;
 private Uint256 available;
@@ -49,6 +88,7 @@ public void InsufficientBalance() {
     }
 }
 ```
+is sufficient.
 
 ### Solution:
 ```java
