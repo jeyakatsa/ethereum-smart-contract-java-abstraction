@@ -20,7 +20,7 @@ public class Coin {
     // Constructor code is only run when the contract
     // is created
     // msg almost always returns a Uint function (Uint256 in the case of Java)
-    public Subcurrency(){
+    public void Coin(){
         minter = msg.sender;
     }
 

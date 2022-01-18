@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7c8fbcd-fa4f-4f18-8ec3-0d2103102662" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Smart-Contract-Dependencies/src/main/java/Uint256.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart-Contract-Reference/src/main/java/Subcurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/Smart-Contract-Reference/src/main/java/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smart-Contract-Reference/Smart-Contract-Reference(Solidity).md" beforeDir="false" afterPath="$PROJECT_DIR$/Smart-Contracts/Smart-Contract-Reference(Solidity).md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smart-Contract-Reference/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smart-Contract-Reference/src/main/java/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Smart-Contracts/src/main/java/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smart-Contract-Reference/src/main/java/SimpleStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Smart-Contracts/src/main/java/SimpleStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +24,9 @@
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/untitled">
       <ProjectState />
     </projectState>
   </component>
@@ -34,13 +46,19 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jeyak\OneDrive\Desktop\Ethereum\New-ERC Token\Ethereum-Smart-Contract-Java-Abstraction\Smart-Contracts" />
+      <recent name="C:\Users\Jeyak\OneDrive\Desktop\Ethereum\New-ERC Token\Ethereum-Smart-Contract-Java-Abstraction\Smart-Contracts\src\main\java" />
       <recent name="C:\Users\Jeyak\OneDrive\Desktop\Ethereum\New-ERC Token\New-ERC-Token-Java-Abstraction\Smart-Contract-Reference" />
     </key>
   </component>
@@ -66,5 +84,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
