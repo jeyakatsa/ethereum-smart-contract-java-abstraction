@@ -1,6 +1,6 @@
 ## Java Abstraction work for Ethereum Smart-Contracts.
 
-### *To allow the building of smart contracts in Java on Ethereum (with Rust, Python, and Go as the next focus).*
+### *Goal: To allow the building of smart contracts in Java on Ethereum (with Rust, Python, and Go as the next focus).*
 
 #### Note: *This project started as a focused version of the [New ERC Token](https://github.com/jeyakatsa/New-ERC-Token) with an overall goal of bringing more developers into the Ethereum ecosystem.*
 
