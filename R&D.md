@@ -38,7 +38,8 @@ Address
 1. Refactor Dependency.
 
 ##### Findings:
-TBD (To Be Determined)
+- In Solidity, address type comes with two flavors, `Address` and `Address Payable`. Both address and address payable store the ***20-byte*** values.
+- Adding a byte type reference to Address class within Java Dependencies seems plausible.
 ##### Test Case/s:
 ```java
 //TBD (To Be Determined)
