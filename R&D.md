@@ -110,7 +110,6 @@ public class Address implements ByteValue {
     }
 }
 ```
-##### Findings:
 
 ### Solution:
 ```java
