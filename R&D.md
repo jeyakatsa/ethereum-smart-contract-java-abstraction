@@ -40,9 +40,75 @@ Address
 ##### Findings:
 - In Solidity, address type comes with two flavors, `Address` and `Address Payable`. Both address and address payable store the ***20-byte*** values.
 - Adding a byte type reference to Address class within Java Dependencies seems plausible.
+```java
+byte[] byteArray;
+byte byteArray[];
+```
+- `Address` needs to be either a `public class Address<>{}` or a `public interface Address<>{}`.
 ##### Test Case/s:
 ```java
-//TBD (To Be Determined)
+public class Address implements ByteValue {
+
+    @Override
+    public byte value() {
+        return 0;
+    }
+
+    @Override
+    public boolean booleanValue() {
+        return false;
+    }
+
+    @Override
+    public byte byteValue() {
+        return 0;
+    }
+
+    @Override
+    public char charValue() {
+        return 0;
+    }
+
+    @Override
+    public short shortValue() {
+        return 0;
+    }
+
+    @Override
+    public int intValue() {
+        return 0;
+    }
+
+    @Override
+    public long longValue() {
+        return 0;
+    }
+
+    @Override
+    public float floatValue() {
+        return 0;
+    }
+
+    @Override
+    public double doubleValue() {
+        return 0;
+    }
+
+    @Override
+    public Type type() {
+        return null;
+    }
+
+    @Override
+    public VirtualMachine virtualMachine() {
+        return null;
+    }
+
+    @Override
+    public int compareTo(ByteValue o) {
+        return 0;
+    }
+}
 ```
 ##### Findings:
 
