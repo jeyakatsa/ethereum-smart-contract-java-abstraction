@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7c8fbcd-fa4f-4f18-8ec3-0d2103102662" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Smart-Contract-Dependencies/src/main/java/Address.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smart-Contract-Dependencies/src/main/java/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/Smart-Contract-Dependencies/src/main/java/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smart-Contracts/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Smart-Contracts/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
