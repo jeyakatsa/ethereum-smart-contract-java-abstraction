@@ -28,6 +28,30 @@ February - December:
 
 *Problems & Solutions ordered top-down from recent-to-oldest*
 
+
+### Problem:
+This function needs to be able to accept 2 parameters:
+```java
+private ArrayList balances = new List<Address, Uint256>();
+```
+***Note: This problem has been forked to solve the below problem***
+
+#### Hypothesis:
+1. Refactor Function.
+
+##### Findings:
+- `ArrayList<String> cars = new ArrayList<String>();` a possible reference.
+##### Test Case/s:
+```java
+//TBD (To Be Determined)
+```
+
+### Solution:
+```java
+//TBD (To Be Determined)
+```
+-----------------------------------------------------------------------
+
 ### Problem:
 This Solidity Keyword needs to be converted into a Java Dependency:
 ```solidity 
@@ -110,14 +134,14 @@ public class Address implements ByteValue {
     }
 }
 ```
+Insufficient, too abstract.
+#### Findings
+- 'List' for importing Address is too abstract; cannot be instantiated.
 
 ### Solution:
 ```java
 //TBD (To Be Determined)
 ```
-
---------------------------------
-*Problems & Solutions ordered top-down from recent-to-oldest*
 
 -----------------------------------------------------------------------
 ## Function Problem Solving Process
