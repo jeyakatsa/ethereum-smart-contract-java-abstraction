@@ -1,3 +1,5 @@
+import com.sun.jdi.ByteValue;
+
 import java.util.*;
 
 public class Coin {
@@ -6,7 +8,8 @@ public class Coin {
     //Address (long), Uint256, Event, msg, Require and Emit dependencies to be imported
     //via Java Abstractions
     public Address minter;
-    private ArrayList balances = new List<Address, Uint256>();
+    private Map<Address, Uint256> balances = new Map<Address, Uint256>();
+    balances.get(new Object[]{Address, Uint256});
 
     // Events allow clients to react to specific
     // contract changes you declare

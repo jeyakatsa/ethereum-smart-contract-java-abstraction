@@ -4,6 +4,8 @@ import com.sun.jdi.VirtualMachine;
 
 public class Address implements ByteValue {
 
+
+
     @Override
     public byte value() {
         return 0;
