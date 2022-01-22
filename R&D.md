@@ -28,7 +28,6 @@ February - December:
 
 *Problems & Solutions ordered top-down from recent-to-oldest*
 
-
 ### Problem:
 This function needs to be able to accept 2 parameters:
 ```java
@@ -43,8 +42,27 @@ private ArrayList balances = new List<Address, Uint256>();
 - `ArrayList<String> cars = new ArrayList<String>();` a possible reference.
 ##### Test Case/s:
 ```java
-//TBD (To Be Determined)
+private ArrayList<Object[]> balances = new ArrayList<>();
+balances.add(new Object[]{Address, Uint256});
 ```
+Insufficient.
+```java
+private Iterable<Object[]> balances = new Iterable<Object[]>() {
+    @Override
+    public Iterator<Object[]> iterator() {
+        return null;
+    }
+};
+balances.get(new Object[]{Address, Uint256});
+```
+Insufficient.
+##### Findings:
+- https://docs.oracle.com/javase/8/docs/api/java/util/package-summary.html provides a lists of all necessary utilities.
+##### Test Case/s:
+```java
+private Map<Address, Uint256> balances = new Map<Address, Uint256>();
+```
+Solved the double parameter issue, but within Map, needs a Key and Value.
 
 ### Solution:
 ```java
