@@ -49,9 +49,7 @@ Insufficient.
 ```java
 private Iterable<Object[]> balances = new Iterable<Object[]>() {
     @Override
-    public Iterator<Object[]> iterator() {
-        return null;
-    }
+    public Iterator<Object[]> iterator() {return null;}
 };
 balances.get(new Object[]{Address, Uint256});
 ```
@@ -63,7 +61,26 @@ Insufficient.
 private Map<Address, Uint256> balances = new Map<Address, Uint256>();
 ```
 Solved the double parameter issue, but within Map, needs a Key and Value.
-
+```java
+private PrimitiveIterator<Address, Uint256> balances = new PrimitiveIterator<Address, Uint256>() {
+    @Override
+    public void forEachRemaining(Uint256 action) {}
+    @Override
+    public boolean hasNext() {return false;}
+    @Override
+    public Address next() {return null;}
+};
+```
+Insufficient since types within `Map` must be wrapper types for primitive types, such as Integer for the primitive int type.
+```java
+private ServiceLoader<Address> balances = new ServiceLoader.Provider<Address>() {
+    @Override
+    public Class<? extends Address> type() {return null;}
+    @Override
+    public Address get() {return null;}
+};
+```
+Insufficient since Address class cannot be accessed...
 ### Solution:
 ```java
 //TBD (To Be Determined)
@@ -90,66 +107,30 @@ byte byteArray[];
 ##### Test Case/s:
 ```java
 public class Address implements ByteValue {
-
     @Override
-    public byte value() {
-        return 0;
-    }
-
+    public byte value() {return 0;}
     @Override
-    public boolean booleanValue() {
-        return false;
-    }
-
+    public boolean booleanValue() {return false;}
     @Override
-    public byte byteValue() {
-        return 0;
-    }
-
+    public byte byteValue() {return 0;}
     @Override
-    public char charValue() {
-        return 0;
-    }
-
+    public char charValue() {return 0;}
     @Override
-    public short shortValue() {
-        return 0;
-    }
-
+    public short shortValue() {return 0;}
     @Override
-    public int intValue() {
-        return 0;
-    }
-
+    public int intValue() {return 0;}
     @Override
-    public long longValue() {
-        return 0;
-    }
-
+    public long longValue() {return 0;}
     @Override
-    public float floatValue() {
-        return 0;
-    }
-
+    public float floatValue() {return 0;}
     @Override
-    public double doubleValue() {
-        return 0;
-    }
-
+    public double doubleValue() {return 0;}
     @Override
-    public Type type() {
-        return null;
-    }
-
+    public Type type() {return null;}
     @Override
-    public VirtualMachine virtualMachine() {
-        return null;
-    }
-
+    public VirtualMachine virtualMachine() {return null;}
     @Override
-    public int compareTo(ByteValue o) {
-        return 0;
-    }
+    public int compareTo(ByteValue o) {return 0;    }
 }
 ```
 Insufficient, too abstract.
