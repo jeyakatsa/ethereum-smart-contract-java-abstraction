@@ -31,6 +31,29 @@ February - December:
 ### Problem:
 This Solidity Keyword needs to be converted into a Java Dependency:
 ```solidity 
+Uint256
+``` 
+
+#### Hypothesis:
+1. Refactor Dependency.
+
+##### Findings:
+- TBD (To Be Determined)
+##### Test Case/s:
+```java
+// TBD (To Be Determined)
+```
+
+### Solution:
+```java
+// TBD (To Be Determined)
+```
+
+-----------------------------------------------------------------------
+
+### Problem:
+This Solidity Keyword needs to be converted into a Java Dependency:
+```solidity 
 Address
 ``` 
 
@@ -46,6 +69,13 @@ byte byteArray[];
 ```
 - `Address` needs to be either a `public class Address<>{}` or a `public interface Address<>{}`.
 ##### Test Case/s:
+```java
+public class Address implements ByteValue {
+    //implementing said values.
+}
+```
+
+### Solution:
 ```java
 public class Address implements ByteValue {
     @Override
@@ -73,14 +103,6 @@ public class Address implements ByteValue {
     @Override
     public int compareTo(ByteValue o) {return 0;}
 }
-```
-Insufficient, too abstract.
-#### Findings
-- 'List' for importing Address is too abstract; cannot be instantiated.
-
-### Solution:
-```java
-//TBD (To Be Determined)
 ```
 
 -----------------------------------------------------------------------
