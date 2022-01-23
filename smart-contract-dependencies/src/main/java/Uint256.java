@@ -1,3 +1,3 @@
-public class Uint256 {
+public interface Uint256 {
 
 }

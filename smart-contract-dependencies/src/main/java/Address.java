@@ -2,67 +2,67 @@ import com.sun.jdi.ByteValue;
 import com.sun.jdi.Type;
 import com.sun.jdi.VirtualMachine;
 
-public class Address implements ByteValue {
+public interface Address extends ByteValue {
 
 
 
     @Override
-    public byte value() {
+    public default byte value() {
         return 0;
     }
 
     @Override
-    public boolean booleanValue() {
+    public default boolean booleanValue() {
         return false;
     }
 
     @Override
-    public byte byteValue() {
+    public default byte byteValue() {
         return 0;
     }
 
     @Override
-    public char charValue() {
+    public default char charValue() {
         return 0;
     }
 
     @Override
-    public short shortValue() {
+    public default short shortValue() {
         return 0;
     }
 
     @Override
-    public int intValue() {
+    public default int intValue() {
         return 0;
     }
 
     @Override
-    public long longValue() {
+    public default long longValue() {
         return 0;
     }
 
     @Override
-    public float floatValue() {
+    public default float floatValue() {
         return 0;
     }
 
     @Override
-    public double doubleValue() {
+    public default double doubleValue() {
         return 0;
     }
 
     @Override
-    public Type type() {
+    public default Type type() {
         return null;
     }
 
     @Override
-    public VirtualMachine virtualMachine() {
+    public default VirtualMachine virtualMachine() {
         return null;
     }
 
     @Override
-    public int compareTo(ByteValue o) {
+    public default int compareTo(ByteValue o) {
         return 0;
     }
 }

@@ -8,8 +8,7 @@ public class Coin {
     //Address (long), Uint256, Event, msg, Require and Emit dependencies to be imported
     //via Java Abstractions
     public Address minter;
-    private Map<Address, Uint256> balances = new Map<Address, Uint256>();
-    balances.get(new Object[]{Address, Uint256});
+    public Balances balances;
 
     // Events allow clients to react to specific
     // contract changes you declare

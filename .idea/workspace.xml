@@ -5,33 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7c8fbcd-fa4f-4f18-8ec3-0d2103102662" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Balances.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart-Contract-Dependencies/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart-Contract-Dependencies/src/main/java/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart-Contract-Dependencies/src/main/java/Uint256.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Uint256.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart-Contracts/Smart-Contract-Reference(Solidity).md" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contracts/Smart-Contract-Reference(Solidity).md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart-Contracts/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contracts/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart-Contracts/src/main/java/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contracts/src/main/java/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart-Contracts/src/main/java/SimpleStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contracts/src/main/java/SimpleStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/7.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Uint256.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Uint256.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-contracts/src/main/java/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contracts/src/main/java/Coin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
