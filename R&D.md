@@ -29,11 +29,164 @@ February - December:
 *Problems & Solutions ordered top-down from recent-to-oldest*
 
 ### Problem:
+This Solidity Keyword needs to be converted into a Java Dependency:
+```solidity 
+Uint256
+``` 
+
+#### Hypothesis:
+1. Refactor Dependency.
+
+##### Findings:
+- The EVM works natively in 256-bit words. Using smaller ones usually consumes more gas because there's extra work to do: the unneeded bits need to be masked away.
+- ***Java AES 256 Encryption***, seems plausible.
+Encrypting information example:
+```java
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.PBEKeySpec;
+import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
+import java.security.spec.KeySpec;
+import java.util.Base64;
+ 
+public class AES256 {
+  private static final String SECRET_KEY = "my_super_secret_key";
+  private static final String SALT = "ssshhhhhhhhhhh!!!!";
+ 
+  public static String decrypt(String strToDecrypt) {
+    try {
+      byte[] iv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      IvParameterSpec ivspec = new IvParameterSpec(iv);
+ 
+      SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+      KeySpec spec = new PBEKeySpec(SECRET_KEY.toCharArray(), SALT.getBytes(), 65536, 256);
+      SecretKey tmp = factory.generateSecret(spec);
+      SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
+ 
+      Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+      cipher.init(Cipher.DECRYPT_MODE, secretKey, ivspec);
+      return new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt)));
+    } catch (Exception e) {
+      System.out.println("Error while decrypting: " + e.toString());
+    }
+    return null;
+  }
+}
+```
+Decrypting information:
+```java
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.PBEKeySpec;
+import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
+import java.security.spec.KeySpec;
+import java.util.Base64;
+ 
+public class AES256 {
+  private static final String SECRET_KEY = "my_super_secret_key";
+  private static final String SALT = "ssshhhhhhhhhhh!!!!";
+ 
+  public static String decrypt(String strToDecrypt) {
+    try {
+      byte[] iv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      IvParameterSpec ivspec = new IvParameterSpec(iv);
+ 
+      SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+      KeySpec spec = new PBEKeySpec(SECRET_KEY.toCharArray(), SALT.getBytes(), 65536, 256);
+      SecretKey tmp = factory.generateSecret(spec);
+      SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
+ 
+      Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+      cipher.init(Cipher.DECRYPT_MODE, secretKey, ivspec);
+      return new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt)));
+    } catch (Exception e) {
+      System.out.println("Error while decrypting: " + e.toString());
+    }
+    return null;
+  }
+}
+```
+
+##### Test Case/s:
+```java
+// TBD (To Be Determined)
+```
+
+### Solution:
+```java
+// TBD (To Be Determined)
+```
+
+-----------------------------------------------------------------------
+
+### Problem:
+This Solidity Keyword needs to be converted into a Java Dependency:
+```solidity 
+Address
+``` 
+
+#### Hypothesis:
+1. Refactor Dependency.
+
+##### Findings:
+- In Solidity, address type comes with two flavors, `Address` and `Address Payable`. Both address and address payable store the ***20-byte*** values.
+- Adding a byte type reference to Address class within Java Dependencies seems plausible.
+```java
+byte[] byteArray;
+byte byteArray[];
+```
+- `Address` needs to be either a `public class Address<>{}` or a `public interface Address<>{}`.
+##### Test Case/s:
+```java
+public class Address implements ByteValue {
+    //implementing said values.
+}
+```
+
+### Solution:
+```java
+public class Address implements ByteValue {
+    @Override
+    public byte value() {return 0;}
+    @Override
+    public boolean booleanValue() {return false;}
+    @Override
+    public byte byteValue() {return 0;}
+    @Override
+    public char charValue() {return 0;}
+    @Override
+    public short shortValue() {return 0;}
+    @Override
+    public int intValue() {return 0;}
+    @Override
+    public long longValue() {return 0;}
+    @Override
+    public float floatValue() {return 0;}
+    @Override
+    public double doubleValue() {return 0;}
+    @Override
+    public Type type() {return null;}
+    @Override
+    public VirtualMachine virtualMachine() {return null;}
+    @Override
+    public int compareTo(ByteValue o) {return 0;}
+}
+```
+
+-----------------------------------------------------------------------
+
+### Problem:
 This function needs to be able to accept 2 parameters:
 ```java
 private ArrayList balances = new List<Address, Uint256>();
 ```
-***Note: This problem has been forked to solve the below problem***
+***Note: This problem has been forked to solve the `Address` problem above***
 
 #### Hypothesis:
 1. Refactor Function.
@@ -81,68 +234,57 @@ private ServiceLoader<Address> balances = new ServiceLoader.Provider<Address>() 
 };
 ```
 Insufficient since Address class cannot be accessed...
-### Solution:
 ```java
-//TBD (To Be Determined)
+private Collection<Address> balances = new Collection<Address>() {
+    @Override
+    public int size() {return 0;}
+    @Override
+    public boolean isEmpty() {return false;}
+    @Override
+    public boolean contains(Object o) {return false;}
+    @Override
+    public Iterator<Address> iterator() {return null;}
+    @Override
+    public Object[] toArray() {return new Object[0];}
+    @Override
+    public <T> T[] toArray(T[] a) {return null;}
+    @Override
+    public boolean add(Address address) {return false;}
+    @Override
+    public boolean remove(Object o) {return false;}
+    @Override
+    public boolean containsAll(Collection<?> c) {return false;}
+    @Override
+    public boolean addAll(Collection<? extends Address> c) {return false;}
+    @Override
+    public boolean removeAll(Collection<?> c) {return false;}
+    @Override
+    public boolean retainAll(Collection<?> c) {return false;}
+    @Override
+    public void clear() {}
+};
 ```
------------------------------------------------------------------------
-
-### Problem:
-This Solidity Keyword needs to be converted into a Java Dependency:
-```solidity 
-Address
-``` 
-
-#### Hypothesis:
-1. Refactor Dependency.
-
-##### Findings:
-- In Solidity, address type comes with two flavors, `Address` and `Address Payable`. Both address and address payable store the ***20-byte*** values.
-- Adding a byte type reference to Address class within Java Dependencies seems plausible.
+Insufficient since Address class cannot be accessed...
+##### Findings
 ```java
-byte[] byteArray;
-byte byteArray[];
-```
-- `Address` needs to be either a `public class Address<>{}` or a `public interface Address<>{}`.
-##### Test Case/s:
-```java
-public class Address implements ByteValue {
-    @Override
-    public byte value() {return 0;}
-    @Override
-    public boolean booleanValue() {return false;}
-    @Override
-    public byte byteValue() {return 0;}
-    @Override
-    public char charValue() {return 0;}
-    @Override
-    public short shortValue() {return 0;}
-    @Override
-    public int intValue() {return 0;}
-    @Override
-    public long longValue() {return 0;}
-    @Override
-    public float floatValue() {return 0;}
-    @Override
-    public double doubleValue() {return 0;}
-    @Override
-    public Type type() {return null;}
-    @Override
-    public VirtualMachine virtualMachine() {return null;}
-    @Override
-    public int compareTo(ByteValue o) {return 0;    }
+public class MyInterfaceImpl implements MyInterface, MyOtherInterface {
+    public void sayHello() {System.out.println("Hello");}
+    public void sayGoodbye() {System.out.println("Goodbye");}
 }
 ```
-Insufficient, too abstract.
-#### Findings
-- 'List' for importing Address is too abstract; cannot be instantiated.
-
+Instead of implementing a Map interface, possibly create a separate class/interface and import that.
 ### Solution:
 ```java
-//TBD (To Be Determined)
+public interface Balances extends Address, Uint256 {
+}
+```
+Creating an interferface while extending `Address` & `Uint256` then importing interface into Smart-Contract:
+```java
+public Balances balances;
 ```
 
 -----------------------------------------------------------------------
+
 ## Function Problem Solving Process
 
 *Problems & Solutions ordered top-down from recent-to-oldest*
