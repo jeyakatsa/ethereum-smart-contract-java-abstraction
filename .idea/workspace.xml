@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7c8fbcd-fa4f-4f18-8ec3-0d2103102662" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Balances.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Balances.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Balances.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Uint256.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Uint256.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-contracts/src/main/java/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contracts/src/main/java/Coin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,7 @@
     <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="23Rf89vzI83raQ0suScScgd7VSY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
