@@ -11,17 +11,19 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
-import javax.xml.bind.DatatypeConverter;
 
 public interface Uint256 {
 
-    public static String decrypt(char[] encryptedText) throws Exception {
+    static byte[] ivBytes = new byte[0];
+    static int iterations = 65536;
+    static int keySize = 256;
 
-        byte[] saltBytes = salt.getBytes("UTF-8");
-        byte[] encryptedTextBytes = DatatypeConverter.parseBase64Binary(encryptedText.toString());
+    public static String decrypt(byte[] uint) throws Exception {
+
+        char[] placeholderText = new char[0];
 
         SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-        PBEKeySpec spec = new PBEKeySpec(encryptedText, saltBytes, iterations, keySize);
+        PBEKeySpec spec = new PBEKeySpec(placeholderText, uint, iterations, keySize);
         SecretKey secretkey = skf.generateSecret(spec);
         SecretKeySpec secretSpec = new SecretKeySpec(secretkey.getEncoded(), "AES");
 
@@ -31,7 +33,7 @@ public interface Uint256 {
         byte[] decryptedTextBytes = null;
 
         try {
-            decryptedTextBytes = cipher.doFinal(encryptedTextBytes);
+            decryptedTextBytes = cipher.doFinal();
         }   catch (IllegalBlockSizeException e) {
             e.printStackTrace();
         }   catch (BadPaddingException e) {
