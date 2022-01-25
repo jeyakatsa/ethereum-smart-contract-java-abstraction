@@ -1,5 +1,4 @@
-rootProject.name = 'Smart-Contract-References'
-include 'Smart-Contract-Reference'
+rootProject.name = 'ethereum-smart-contract-java-abstraction'
 include 'Smart-Contract-Dependencies'
 include 'Smart-Contracts'
 
