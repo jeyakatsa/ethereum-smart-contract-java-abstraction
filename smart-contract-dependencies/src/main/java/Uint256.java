@@ -18,6 +18,10 @@ public interface Uint256 {
     static int iterations = 65536;
     static int keySize = 256;
 
+    public default void Uint256(String decrypt) {
+
+    };
+
     public static String decrypt(byte[] uint) throws Exception {
 
         char[] placeholderText = new char[0];
