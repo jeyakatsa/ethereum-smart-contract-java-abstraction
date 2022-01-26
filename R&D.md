@@ -119,7 +119,32 @@ Insufficient due to Interface failing to embrace Constructors.
 public abstract void Uint256(decrypt);
 ```
 Insufficient.
-
+```java
+public abstract <decrypt> void Uint256(decrypt);
+```
+Insufficient, indentifier at end of function needed.
+```java
+ public default void Uint256(String decrypt) {};
+```
+Sufficient if `decrypt` is instantiated.
+##### Findings
+Invoking:
+```java
+public class ChildClass implements A, C {
+    @Override    
+    public void foo() {
+       //you could completely override the default implementations
+       doSomethingElse();
+       //or manage conflicts between the same method foo() in both A and C
+       A.super.foo();
+    }
+    public void bah() {
+       A.super.foo(); //original foo() from A accessed
+       C.super.foo(); //original foo() from C accessed
+    }
+}
+```
+Could provide solution...
 
 ### Solution:
 ```java
