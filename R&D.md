@@ -31,6 +31,59 @@ February - December:
 ### Problem:
 This Solidity Keyword needs to be converted into a Java Dependency:
 ```solidity 
+Bytes32
+``` 
+
+#### Hypothesis:
+1. Refactor Dependency.
+
+##### Findings
+- TBD (To Be Determined)
+##### Test Case/s:
+```java
+//TBD (To Be Determined)
+```
+
+### Solution:
+```java
+///TBD (To Be Determined)
+```
+-----------------------------------------------------------------------
+
+### Problem:
+This Solidity Keyword needs to be converted into a Java Dependency:
+```solidity 
+Event
+``` 
+
+#### Hypothesis:
+1. Refactor Dependency.
+
+##### Findings
+```solidity
+contract Test {
+   event Deposit(address indexed _from, bytes32 indexed _id, uint _value);
+   function deposit(bytes32 _id) public payable {      
+      emit Deposit(msg.sender, _id, msg.value);
+   }
+}
+```
+Event essentially pulls `address`, `bytes32` and `uint` as dependencies in java, thus, need to create or import `bytes32` as a dependency ***expanded in above problem***
+##### Test Case/s:
+```java
+//TBD (To Be Determined)
+```
+
+### Solution:
+```java
+///TBD (To Be Determined)
+```
+-----------------------------------------------------------------------
+
+
+### Problem:
+This Solidity Keyword needs to be converted into a Java Dependency:
+```solidity 
 Uint256
 ``` 
 
@@ -147,7 +200,7 @@ public class ChildClass implements A, C {
 Could provide solution...
 ##### Test Case/s:
 ```java
-public default void Uint256() {decrypt();};
+public default void Uint256() {decrypt();}
 ```
 Insufficient.
 
