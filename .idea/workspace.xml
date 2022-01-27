@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7c8fbcd-fa4f-4f18-8ec3-0d2103102662" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Uint256.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Uint256.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-contracts/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contracts/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-contracts/src/main/java/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contracts/src/main/java/Coin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +88,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="ethereum-smart-contract-java-abstraction [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ethereum-smart-contract-java-abstraction [build]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -105,11 +109,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.ethereum-smart-contract-java-abstraction [build]" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
