@@ -145,10 +145,19 @@ public class ChildClass implements A, C {
 }
 ```
 Could provide solution...
+##### Test Case/s:
+```java
+public default void Uint256() {decrypt();};
+```
+Insufficient.
 
 ### Solution:
 ```java
-// TBD (To Be Determined)
+public default void Uint256() throws Exception {decrypt();}
+
+public static void decrypt() throws Exception {
+    //Vast Code expanded within [Uint256 Interface](https://github.com/jeyakatsa/ethereum-smart-contract-java-abstraction/blob/main/smart-contract-dependencies/src/main/java/Uint256.java)
+}
 ```
 
 -----------------------------------------------------------------------
