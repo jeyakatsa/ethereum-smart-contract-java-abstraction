@@ -5,7 +5,7 @@ import java.util.*;
 public class Coin {
     //This class is meant to act as a "Subcurrency" of Ethereum.
 
-    //Event, msg, Require and Emit dependencies to be imported
+    //msg, Require and Emit dependencies to be imported
     //via Java Abstractions
     public Address minter;
     public Balances balances;

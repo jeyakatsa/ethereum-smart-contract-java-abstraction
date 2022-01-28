@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7c8fbcd-fa4f-4f18-8ec3-0d2103102662" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-contracts/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contracts/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Bytes32.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Bytes32.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart-contracts/src/main/java/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contracts/src/main/java/Coin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +53,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
