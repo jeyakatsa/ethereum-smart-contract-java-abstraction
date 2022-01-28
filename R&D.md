@@ -31,28 +31,6 @@ February - December:
 ### Problem:
 This Solidity Keyword needs to be converted into a Java Dependency:
 ```solidity 
-Bytes32
-``` 
-
-#### Hypothesis:
-1. Refactor Dependency.
-
-##### Findings
-- TBD (To Be Determined)
-##### Test Case/s:
-```java
-//TBD (To Be Determined)
-```
-
-### Solution:
-```java
-///TBD (To Be Determined)
-```
------------------------------------------------------------------------
-
-### Problem:
-This Solidity Keyword needs to be converted into a Java Dependency:
-```solidity 
 Event
 ``` 
 
@@ -68,16 +46,53 @@ contract Test {
    }
 }
 ```
-Event essentially pulls `address`, `bytes32` and `uint` as dependencies in java, thus, need to create or import `bytes32` as a dependency ***expanded in above problem***
+Event essentially pulls `address`, `bytes32` and `uint` as dependencies in java, thus, need to create or import `bytes32` as a dependency ***expanded in below problem***
 ##### Test Case/s:
 ```java
-//TBD (To Be Determined)
+public default void Event(Address from, Bytes32 id, Uint256 value) {}
 ```
 
 ### Solution:
+Possibly sufficient:
 ```java
-///TBD (To Be Determined)
+public default void Event(Address from, Bytes32 id, Uint256 value) {
+  from = null;
+  id = null;
+  value = null;
+}
 ```
+-----------------------------------------------------------------------
+
+### Problem:
+This Solidity Keyword needs to be converted into a Java Dependency:
+```solidity 
+bytes32
+``` 
+
+#### Hypothesis:
+1. Refactor Dependency.
+
+##### Findings
+Ethereum uses the two endianness format depending on the variable type, as follows:
+- Big endian format : strings and bytes
+- Little endian format : other types (numbers, addresses, etc…).
+As an example, this is how we would store the string “abcd” in one full word (32 bytes):
+```0x6162636400000000000000000000000000000000000000000000000000000000```
+This is how the number 0x61626364 would be stored:
+```0x0000000000000000000000000000000000000000000000000000000061626364```
+##### Test Case/s
+```java
+byte[] bytes32 = new byte[32];
+```
+
+### Solution:
+Creating a simple `byte[]` array,
+```java
+public Bytes32() {
+  byte[] bytes32 = new byte[32];
+}
+```
+
 -----------------------------------------------------------------------
 
 
