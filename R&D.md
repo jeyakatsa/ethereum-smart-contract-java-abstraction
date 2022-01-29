@@ -61,18 +61,26 @@ function boom( address _addr) return (bytes4 _sig) {
 ```
 
 If you call the function `boom(addr)` it will return a hash that would look like `33DB172D` which would represent the hash of `boom(address)`. `msg.data` will return a payload in bytes. It holds the calldata as it is referred to in EVM terminology or the parameters that are passed to the function. If you pass in complex data structures into a function, the resulting msg.data will be structured in a complex way. It organizes the incoming params in bytes and delimits them with a 32 byte integer.
+
 - 
+
 In `msg.sender`, we are talking about the ACCOUNT address from which the function in the Smart Contract was called. For example, suppose in the Remix Ethereum (IDE), the Escrow Smart Contract was deployed from the ACCOUNT address: 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+
 - 
+
 In that case, the State Variable owner will have the same address mentioned above. This is because the constructor function was called from that address.
+
 - 
+
 Now, suppose we change the ACCOUNT address to: 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2
+
 - 
+
 We then call the function depositNothing from the Smart Contract which was deployed earlier. You will get the following error, "you are not the owner". 
+
 - 
+
 This is because the `msg.sender` in the `depositNothing` function equates to the second ACCOUNT address. This obviously does not equate to the first ACCOUNT Address - owner. The second argument in the require function was therefore returned along with the error.
-- 
-`address(this)`
 
 ##### Test Case/s:
 ```java
