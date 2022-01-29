@@ -31,6 +31,51 @@ February - December:
 ### Problem:
 This Solidity Keyword needs to be converted into a Java Dependency:
 ```solidity 
+msg
+``` 
+
+#### Hypothesis:
+1. Refactor Dependency.
+
+##### Findings
+The *"message"* object is a global variable that holds data which will be important for access to the blockchain.
+
+```solidity
+#msg.data (bytes)
+#msg.sender (address)
+#msg.sig (bytes4)
+#msg.value (uint)
+```
+`msg.sender` is most commonly used. It is the address of the original sender .
+
+`msg.sig` will return a hash of the current function signature. 
+
+`msg.value` this usually holds Ether ( Wei (ether / 1e18) ) that is sent along with the message.
+
+So essentially,
+
+```solidity
+function boom( address _addr) return (bytes4 _sig) {
+  return msg.sig 
+}
+```
+
+If you call the function `boom(addr)` it will return a hash that would look like `33DB172D` which would represent the hash of `boom(address)`. `msg.data` will return a payload in bytes. It holds the calldata as it is referred to in EVM terminology or the parameters that are passed to the function. If you pass in complex data structures into a function, the resulting msg.data will be structured in a complex way. It organizes the incoming params in bytes and delimits them with a 32 byte integer.
+
+##### Test Case/s:
+```java
+//TBD (To Be Determined)
+```
+
+### Solution:
+```java
+//TBD (To Be Determined)
+```
+-----------------------------------------------------------------------
+
+### Problem:
+This Solidity Keyword needs to be converted into a Java Dependency:
+```solidity 
 Event
 ``` 
 
