@@ -94,11 +94,139 @@ class Address {
     Address(byte[] d) {data = d;}
 }
 ```
-Serves as a minimal solution, problem now derives from linking the `sender` keyword.
+Serves as a minimal solution, problem now derives from linking the `sender` keyword. Address needs to act as a node. 
+```java
+Node head;
+
+class Node {
+    byte[] data;
+    Node prev;
+    Node next;
+
+    Node(byte[] d) {data = d;}
+}
+```
+Need to somehow link `Node` interface into `Address` interface ***Created new problem to solve this below***
 
 ### Solution:
 ```java
 //TBD (To Be Determined)
+```
+-----------------------------------------------------------------------
+
+### Problem:
+`Node` interface needs to be interlinked with `Address` interface.
+
+#### Hypothesis:
+1. Refactor `Address` to match `Node`.
+
+##### Findings
+Node interface:
+```java
+public interface Node {
+
+  // Node type constants
+  public static final short ELEMENT_NODE                = 1;
+  public static final short ATTRIBUTE_NODE              = 2;
+  public static final short TEXT_NODE                   = 3;
+  public static final short CDATA_SECTION_NODE          = 4;
+  public static final short ENTITY_REFERENCE_NODE       = 5;
+  public static final short ENTITY_NODE                 = 6;
+  public static final short PROCESSING_INSTRUCTION_NODE = 7;
+  public static final short COMMENT_NODE                = 8;
+  public static final short DOCUMENT_NODE               = 9;
+  public static final short DOCUMENT_TYPE_NODE          = 10;
+  public static final short DOCUMENT_FRAGMENT_NODE      = 11;
+  public static final short NOTATION_NODE               = 12;
+
+  // Node properties
+  public String   getNodeName();
+  public String   getNodeValue() throws DOMException;
+  public void     setNodeValue(String nodeValue) 
+   throws DOMException;
+  public short    getNodeType();
+  public String   getNamespaceURI();
+  public String   getPrefix();
+  public void     setPrefix(String prefix) throws DOMException;
+  public String   getLocalName();
+
+  // Navigation methods 
+  public Node         getParentNode();
+  public boolean      hasChildNodes();
+  public NodeList     getChildNodes();
+  public Node         getFirstChild();
+  public Node         getLastChild();
+  public Node         getPreviousSibling();
+  public Node         getNextSibling();
+  public Document     getOwnerDocument();
+  public boolean      hasAttributes();
+  public NamedNodeMap getAttributes();
+
+  // Manipulator methods 
+  public Node insertBefore(Node newChild, Node refChild)
+   throws DOMException;
+  public Node replaceChild(Node newChild,  Node oldChild)
+   throws DOMException;
+  public Node removeChild(Node oldChild) throws DOMException;
+  public Node appendChild(Node newChild) throws DOMException;
+
+  // Utility methods
+  public Node cloneNode(boolean deep);
+  public void normalize();
+  public boolean isSupported(String feature, String version);
+
+}
+```
+Address interface
+```java
+public interface Address extends ByteValue {
+
+    @Override
+    public default byte value() {return 0;}
+
+    @Override
+    public default boolean booleanValue() {return false;}
+
+    @Override
+    public default byte byteValue() {return 0;}
+
+    @Override
+    public default char charValue() {return 0;}
+
+    @Override
+    public default short shortValue() {return 0;}
+
+    @Override
+    public default int intValue() {return 0;}
+
+    @Override
+    public default long longValue() {return 0;}
+
+    @Override
+    public default float floatValue() {return 0;}
+
+    @Override
+    public default double doubleValue() {return 0;}
+
+    @Override
+    public default Type type() {return null;}
+
+    @Override
+    public default VirtualMachine virtualMachine() {return null;}
+
+    @Override
+    public default int compareTo(ByteValue o) {return 0;}
+}
+```
+
+##### Test Case/s:
+```java
+TBD
+```
+
+### Solution:
+```java
+//TBD
 ```
 -----------------------------------------------------------------------
 
