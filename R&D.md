@@ -84,8 +84,17 @@ This is because the `msg.sender` in the `depositNothing` function equates to the
 
 ##### Test Case/s:
 ```java
-//TBD (To Be Determined)
+Address head;
+
+class Address {
+    byte[] data;
+    Address sender;
+    Address next;
+
+    Address(byte[] d) {data = d;}
+}
 ```
+Serves as a minimal solution, problem now derives from linking the `sender` keyword.
 
 ### Solution:
 ```java
