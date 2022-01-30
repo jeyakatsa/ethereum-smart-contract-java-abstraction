@@ -4,7 +4,7 @@
 
 ### Abstract:
 
-Currently, there are ***200,000 Solidity/Ethereum Developers (Worldwide*** *(source: [TrustNodes](https://www.trustnodes.com/2018/07/22/ethereums-ecosystem-estimated-200000-developers-truffle-seeing-80000-downloads-month))* ***)*** and ***7.1million Java Developers (Worldwide)****(source: [Daxx](https://www.daxx.com/blog/development-trends/number-software-developers-world#:~:text=According%20to%20SlashData%2C%20the%20number,%2C6%20million%20(source)))* respectfully.
+Currently, there are ***200,000 Solidity/Ethereum Developers (Worldwide*** *(source: [TrustNodes](https://www.trustnodes.com/2018/07/22/ethereums-ecosystem-estimated-200000-developers-truffle-seeing-80000-downloads-month))* ***)*** and ***7.1million Java Developers (Worldwide*** *(source: [Daxx](https://www.daxx.com/blog/development-trends/number-software-developers-world#:~:text=According%20to%20SlashData%2C%20the%20number,%2C6%20million%20(source)))* ***)*** respectfully.
 
 What if all those Java developers (currently in the millions), could be onboarded into the Ethereum Ecosystem?
 
