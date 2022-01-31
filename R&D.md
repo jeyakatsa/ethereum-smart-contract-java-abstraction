@@ -177,7 +177,7 @@ public interface Node {
 
 }
 ```
-Address interface
+Address interface:
 ```java
 public interface Address extends ByteValue {
 
@@ -218,15 +218,16 @@ public interface Address extends ByteValue {
     public default int compareTo(ByteValue o) {return 0;}
 }
 ```
-
-##### Test Case/s:
+Interfaces can extend 2 interfaces, example:
 ```java
-TBD
+interface C extends A,B {
+   public void test3();
+}
 ```
 
 ### Solution:
 ```java
-//TBD
+public interface Address extends ByteValue, Node {}
 ```
 -----------------------------------------------------------------------
 
