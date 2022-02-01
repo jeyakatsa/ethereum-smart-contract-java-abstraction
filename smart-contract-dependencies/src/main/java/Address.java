@@ -1,10 +1,9 @@
 import com.sun.jdi.ByteValue;
 import com.sun.jdi.Type;
 import com.sun.jdi.VirtualMachine;
+import org.w3c.dom.Node;
 
-public interface Address extends ByteValue {
-
-
+public interface Address extends ByteValue, Node {
 
     @Override
     public default byte value() {
