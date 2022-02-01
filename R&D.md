@@ -106,7 +106,28 @@ class Node {
     Node(byte[] d) {data = d;}
 }
 ```
-Need to somehow link `Node` interface into `Address` interface ***Created new problem to solve this below***
+`sender` within `Msg.sender` needs to link to the `Msg` dependency within the `Coin` Smart-Contract  ***Created new problem to solve this below***
+
+### Solution:
+```java
+//TBD (To Be Determined)
+```
+-----------------------------------------------------------------------
+
+### Problem:
+`sender` within `Msg.sender` needs to link to the `Msg` dependency within the `Coin` Smart-Contract
+
+#### Hypothesis:
+1. Refactor `Msg` dependency.
+
+##### Findings
+This `sender` function always returns any message from the sender and call ( current ). In Ethereum documentation there is one thing required always that is contract address. And msg.sender function connecting person to the contract address correctly.
+This function also works contract connecting with another contract address at the same time.
+
+##### Test Case/s:
+```java
+//TBD (To Be Determined)
+```
 
 ### Solution:
 ```java
