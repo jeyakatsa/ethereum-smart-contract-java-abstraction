@@ -4,7 +4,7 @@ public class Msg {
 
     Address head;
 
-    class Address {
+    public static class Address {
         byte[] data;
         Address sender;
         Address next;
@@ -12,8 +12,10 @@ public class Msg {
         Address(byte[] d) {
             data = d;
         }
-    }
 
-    //Code to be added
+        public Address() {
+
+        }
+    }
 
 }

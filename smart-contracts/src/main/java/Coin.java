@@ -23,7 +23,7 @@ public class Coin {
     // is created
     // msg almost always returns a Uint function (Uint256 in the case of Java)
     public void Coin(){
-        minter = Msg.sender;
+        minter = (Address) new Msg.Address();
     }
 
     // Sends an amount of newly created coins to an address
