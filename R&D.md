@@ -123,11 +123,30 @@ class Node {
 ##### Findings
 This `sender` function always returns any message from the sender and call ( current ). In Ethereum documentation there is one thing required always that is contract address. And msg.sender function connecting person to the contract address correctly.
 This function also works contract connecting with another contract address at the same time.
+- Calling a function from within a separate function:
+```java
+class A {
+   public void fun(){
+     //do something
+   }
+}
+
+class B {
+   public static void main(String args[]){
+     A obj = new A();
+     obj.fun();
+   }
+}
+```
 
 ##### Test Case/s:
 ```java
-//TBD (To Be Determined)
+public void Coin(){
+    minter = (Address) new Msg.Address();
+}
 ```
+Semi-sufficient. Address now needs to be "`sender`".
+##### Findings
 
 ### Solution:
 ```java
