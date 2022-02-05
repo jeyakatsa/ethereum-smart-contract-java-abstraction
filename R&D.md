@@ -149,7 +149,7 @@ Semi-sufficient. Address now needs to be "`sender`".
 ##### Findings
 Hypothesizing, creating:
 - ***`data` interface and extending it to a `bytes` interface.***
-- ***`sender` interface and extending it to the `address` interface.***
+- ***`sender` interface and extending it to the `address` interface.*** Results recorded within [Sender Dependency R&D](https://github.com/jeyakatsa/ethereum-smart-contract-java-abstraction/blob/main/R%26D-files/Sender-Dependency-R%26D.md)
 - ***`sig` interface and extending it to a `bytes4` interface.***
 - ***`value` interface and extending it to the `uint` interface.***
 may suffice for a smooth Solidity to Java conversion. Essentially creating separate interfaces in Java and linking them to all correspondng keywords in Solidity.
