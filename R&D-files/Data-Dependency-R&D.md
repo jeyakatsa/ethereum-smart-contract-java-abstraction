@@ -17,10 +17,14 @@ This Solidity Keyword needs to be converted into a Java Dependency:
 
 ##### Test Case/s:
 ```java
-TBD
+public interface Data extends javax.xml.crypto.Data, ByteValue {}
 ```
+Likely sufficient... More research to be done.
 ### Solution:
 ```java
-TBD
+public interface Data extends ByteValue {
+    //@Override functions extended from ByteValue imported (similar to Address Dependency)
+    }
+}
 ```
 -----------------------------------------------------------------------
