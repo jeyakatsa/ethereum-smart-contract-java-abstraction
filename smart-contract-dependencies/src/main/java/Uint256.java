@@ -41,7 +41,5 @@ public interface Uint256 {
         }
 
         decryptedTextBytes.toString();
-
     }
-
 }

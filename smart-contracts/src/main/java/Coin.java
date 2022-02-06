@@ -23,7 +23,7 @@ public class Coin {
     // is created
     // msg almost always returns a Uint function (Uint256 in the case of Java)
     public void Coin(){
-        minter = (Address) new Msg.Address();
+        minter = (Address) Msg.Sender;
     }
 
     // Sends an amount of newly created coins to an address
@@ -48,12 +48,12 @@ public class Coin {
     // Sends an amount of existing coins
     // from any caller to an address
     public void Send(Address receiver, Uint256 amount){
-        if (amount > balances.get(Msg.sender)){
+        if (amount > balances.get(Msg.Sender)){
             InsufficientBalance(amount = requested, balances.get(Msg.sender) = available);
         }
-        balances.get(Msg.sender) -= amount;
+        balances.get(Msg.Sender) -= amount;
         balances.get(receiver) += amount;
-        Emit Sent(Msg.sender, receiver, amount);
+        Emit Sent(Msg.Sender, receiver, amount);
 
     }
 
