@@ -1,3 +1,5 @@
-public interface Value {
-    //Code to be added
+public interface Value extends Uint256 {
+    public static class Uint256 {
+
+    }
 }

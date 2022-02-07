@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b7c8fbcd-fa4f-4f18-8ec3-0d2103102662" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Sender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Sig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Value.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
