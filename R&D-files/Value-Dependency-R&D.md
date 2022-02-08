@@ -31,7 +31,7 @@ contract B {
 ```
 ##### Test Case/s:
 ```java
-//TBD
+public interface Value extends Uint256 {public static class Uint256 {}}
 ```
 ### Solution:
 ```java
