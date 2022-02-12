@@ -18,28 +18,28 @@ To deploy a smart contract, you merely send an Ethereum transaction containing t
 
 Understanding...
 
-- [Ethereum networks](https://ethereum.org/en/developers/docs/networks/): Networks are different Ethereum environments you can access for development, testing, or production use cases.  
-- - Public networks: Accessible to anyone in the world with an internet connection. Anyone can read or create transactions on a public blockchain and validate the transactions being executed. Agreement on transactions and the state of the network is decided by a consensus of peers. 
-- - - Mainnet: The primary public Ethereum production blockchain, where actual-value transactions occur on the distributed ledger. When people and exchanges discuss ETH prices, they're talking about Mainnet ETH.
-- - - Testnet: These are networks used by *protocol developers or smart contract developers* to test both protocol upgrades as well as potential smart contracts in a production-like environment before deployment to Mainnet. Think of this as an analog to production versus staging servers. Most testnets use a proof-of-authority consensus mechanism. This means a small number of nodes are chosen to validate transactions and create new blocks – staking their identity in the process. It's hard to incentivise mining on a proof-of-work testnet which can leave it vulnerable.
-- - - - Görli: A proof-of-authority testnet that works across clients.
-- - - - Kovan: A proof-of-authority testnet for those running OpenEthereum clients.
-- - - - Rinkeby: A proof-of-authority testnet for those running Geth client.
-- - - - Ropsten: A proof-of-work testnet. This means it's the best like-for-like representation of Ethereum.
-- - - - - Testnet Faucets: ETH on testnets has no real value; therefore, there are no markets for testnet ETH. Since you need ETH to actually interact with Ethereum, most people get testnet ETH from faucets. Most faucets are webapps where you can input an address which you request ETH to be sent to. Some examples of this are:
-- - - - - - [FaucETH](https://fauceth.komputing.org/)
-- - - - - - [Gorli faucet](https://faucet.goerli.mudit.blog/)
-- - Private networks: An Ethereum network is a private network if its nodes are not connected to a public network (i.e. Mainnet or a testnet). In this context, private only means reserved or isolated, rather than protected or secure.
+**[Ethereum networks](https://ethereum.org/en/developers/docs/networks/)**: Networks are different Ethereum environments you can access for development, testing, or production use cases.  
+- Public networks: Accessible to anyone in the world with an internet connection. Anyone can read or create transactions on a public blockchain and validate the transactions being executed. Agreement on transactions and the state of the network is decided by a consensus of peers. 
+- - Mainnet: The primary public Ethereum production blockchain, where actual-value transactions occur on the distributed ledger. When people and exchanges discuss ETH prices, they're talking about Mainnet ETH.
+- - ***Testnet: These are networks used by protocol developers or smart contract developers to test both protocol upgrades as well as potential smart contracts in a production-like environment before deployment to Mainnet. Think of this as an analog to production versus staging servers. Most testnets use a proof-of-authority consensus mechanism. This means a small number of nodes are chosen to validate transactions and create new blocks – staking their identity in the process. It's hard to incentivise mining on a proof-of-work testnet which can leave it vulnerable.***
+- - - Görli: A proof-of-authority testnet that works across clients.
+- - - Kovan: A proof-of-authority testnet for those running OpenEthereum clients.
+- - - Rinkeby: A proof-of-authority testnet for those running Geth client.
+- - - Ropsten: A proof-of-work testnet. This means it's the best like-for-like representation of Ethereum.
+- - - - Testnet Faucets: ETH on testnets has no real value; therefore, there are no markets for testnet ETH. Since you need ETH to actually interact with Ethereum, most people get testnet ETH from faucets. Most faucets are webapps where you can input an address which you request ETH to be sent to. Some examples of this are:
+- - - - - [FaucETH](https://fauceth.komputing.org/)
+- - - - - [Gorli faucet](https://faucet.goerli.mudit.blog/)
+- Private networks: An Ethereum network is a private network if its nodes are not connected to a public network (i.e. Mainnet or a testnet). In this context, private only means reserved or isolated, rather than protected or secure.
 
-- [Transactions](https://ethereum.org/en/developers/docs/transactions/): Transactions are cryptographically signed instructions from accounts. An account will initiate a transaction to update the state of the Ethereum network. The simplest transaction is transferring ETH from one account to another. Transactions require a fee and must be mined to become valid. To make this overview simpler we'll cover gas fees and mining elsewhere. A submitted transaction includes the following information:
-- - Recipient: The receiving address (if an externally-owned account, the transaction will transfer value. If a contract account, the transaction will execute the contract code)
-- - Signature: The identifier of the sender. This is generated when the sender's private key signs the transaction and confirms the sender has authorized this transaction
-- - Value: Amount of ETH to transfer from sender to recipient (in WEI, a denomination of ETH)
-- - Data: Optional field to include arbitrary data
-- - GasLimit: The maximum amount of gas units that can be consumed by the transaction. Units of gas represent computational steps
-- - MaxPriorityFeePerGas: The maximum amount of gas to be included as a tip to the miner
-- - MaxFeePerGas: The maximum amount of gas willing to be paid for the transaction (inclusive of baseFeePerGas and maxPriorityFeePerGas)
-- - - Gas is a reference to the computation required to process the transaction by a miner. Users have to pay a fee for this computation. The `gasLimit`, and `maxPriorityFeePerGas` determine the maximum transaction fee paid to the miner.
+**[Transactions](https://ethereum.org/en/developers/docs/transactions/)**: Transactions are cryptographically signed instructions from accounts. An account will initiate a transaction to update the state of the Ethereum network. The simplest transaction is transferring ETH from one account to another. Transactions require a fee and must be mined to become valid. To make this overview simpler we'll cover gas fees and mining elsewhere. A submitted transaction includes the following information:
+- Recipient: The receiving address (if an externally-owned account, the transaction will transfer value. If a contract account, the transaction will execute the contract code)
+- Signature: The identifier of the sender. This is generated when the sender's private key signs the transaction and confirms the sender has authorized this transaction
+- Value: Amount of ETH to transfer from sender to recipient (in WEI, a denomination of ETH)
+- Data: Optional field to include arbitrary data
+- GasLimit: The maximum amount of gas units that can be consumed by the transaction. Units of gas represent computational steps
+- MaxPriorityFeePerGas: The maximum amount of gas to be included as a tip to the miner
+- MaxFeePerGas: The maximum amount of gas willing to be paid for the transaction (inclusive of baseFeePerGas and maxPriorityFeePerGas)
+- - Gas is a reference to the computation required to process the transaction by a miner. Users have to pay a fee for this computation. The `gasLimit`, and `maxPriorityFeePerGas` determine the maximum transaction fee paid to the miner.
 The transaction object will look a little like this:
 ```
 { from: "0xEA674fdDe714fd979de3EdF0F56AA9716B898ec8",
@@ -99,7 +99,25 @@ The `raw` is the signed transaction in Recursive Length Prefix (RLP) encoded for
 
 With the signature hash, the transaction can be cryptographically proven that it came from the sender and submitted to the network.
 
-- [Anatomy of Smart-cCntracts](https://ethereum.org/en/developers/docs/smart-contracts/anatomy/):.
+**Types of Transactions:**
+
+On Ethereum there are a few different types of transactions:
+
+1. Regular transactions: a transaction from one wallet to another.
+2. **Contract deployment transactions: a transaction without a 'to' address, where the data field is used for the contract code.**
+
+**Transaction Lifecycle:** 
+
+Once the transaction has been submitted the following happens:
+1. Once you send a transaction, cryptography generates a transaction hash: `0x97d99bc7729211111a21b12c933c949d4f31684f1d6954ff477d0477538ff017`
+2. The transaction is then broadcast to the network and included in a pool with lots of other transactions.
+3. A miner must pick your transaction and include it in a block in order to verify the transaction and consider it "successful". 
+- You may end up waiting at this stage if the network is busy and miners aren't able to keep up.
+4. Your transaction will receive "confirmations". The number of confirmations is the number of blocks created since the block that included your transaction. The higher the number, the greater the certainty that the network processed and recognized the transaction.
+- Recent blocks may get re-organized, giving the impression the transaction was unsuccessful; however, the transaction may still be valid but included in a different block.
+- The probability of a re-organization diminishes with every subsequent block mined, i.e. the greater the number of confirmations, the more immutable the transaction is.
+
+**[Anatomy of Smart-Contracts](https://ethereum.org/en/developers/docs/smart-contracts/anatomy/)**:.
 
 Deploying a contract also costs ether (ETH), so you should be familiar with [gas and fees](https://ethereum.org/en/developers/docs/gas/) on Ethereum.
 
