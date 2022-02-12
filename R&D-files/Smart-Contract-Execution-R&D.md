@@ -31,7 +31,73 @@ Understanding...
 - - - - - - [Gorli faucet](https://faucet.goerli.mudit.blog/)
 - - Private networks: An Ethereum network is a private network if its nodes are not connected to a public network (i.e. Mainnet or a testnet). In this context, private only means reserved or isolated, rather than protected or secure.
 
-- [Transactions](https://ethereum.org/en/developers/docs/transactions/):
+- [Transactions](https://ethereum.org/en/developers/docs/transactions/): Transactions are cryptographically signed instructions from accounts. An account will initiate a transaction to update the state of the Ethereum network. The simplest transaction is transferring ETH from one account to another. Transactions require a fee and must be mined to become valid. To make this overview simpler we'll cover gas fees and mining elsewhere. A submitted transaction includes the following information:
+- - Recipient: The receiving address (if an externally-owned account, the transaction will transfer value. If a contract account, the transaction will execute the contract code)
+- - Signature: The identifier of the sender. This is generated when the sender's private key signs the transaction and confirms the sender has authorized this transaction
+- - Value: Amount of ETH to transfer from sender to recipient (in WEI, a denomination of ETH)
+- - Data: Optional field to include arbitrary data
+- - GasLimit: The maximum amount of gas units that can be consumed by the transaction. Units of gas represent computational steps
+- - MaxPriorityFeePerGas: The maximum amount of gas to be included as a tip to the miner
+- - MaxFeePerGas: The maximum amount of gas willing to be paid for the transaction (inclusive of baseFeePerGas and maxPriorityFeePerGas)
+- - - Gas is a reference to the computation required to process the transaction by a miner. Users have to pay a fee for this computation. The `gasLimit`, and `maxPriorityFeePerGas` determine the maximum transaction fee paid to the miner.
+The transaction object will look a little like this:
+```
+{ from: "0xEA674fdDe714fd979de3EdF0F56AA9716B898ec8",
+  to: "0xac03bb73b6a9e108530aff4df5077c2b3d481e5a",
+  gasLimit: "21000",
+  maxFeePerGas: "300",
+  maxPriorityFeePerGas: "10",
+  nonce: "0",
+  value: "10000000000" 
+}
+```
+But a transaction object needs to be signed using the sender's private key. This proves that the transaction could only have come from the sender and was not sent fraudulently. 
+An Ethereum client like Geth will handle this signing process. JSON Example:
+```
+{
+  "id": 2,
+  "jsonrpc": "2.0",
+  "method": "account_signTransaction",
+  "params": [
+    {
+      "from": "0x1923f626bb8dc025849e00f99c25fe2b2f7fb0db",
+      "gas": "0x55555",
+      "maxFeePerGas": "0x1234",
+      "maxPriorityFeePerGas": "0x1234",
+      "input": "0xabcd",
+      "nonce": "0x0",
+      "to": "0x07a565b7ed7d7a678680a4c162885bedbb695fe0",
+      "value": "0x1234"
+    }
+  ]
+}
+```
+Email Response:
+```
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "raw": "0xf88380018203339407a565b7ed7d7a678680a4c162885bedbb695fe080a44401a6e4000000000000000000000000000000000000000000000000000000000000001226a0223a7c9bcf5531c99be5ea7082183816eb20cfe0bbc322e97cc5c7f71ab8b20ea02aadee6b34b45bb15bc42d9c09de4a6754e7000908da72d48cc7704971491663",
+    "tx": {
+      "nonce": "0x0",
+      "maxFeePerGas": "0x1234",
+      "maxPriorityFeePerGas": "0x1234",
+      "gas": "0x55555",
+      "to": "0x07a565b7ed7d7a678680a4c162885bedbb695fe0",
+      "value": "0x1234",
+      "input": "0xabcd",
+      "v": "0x26",
+      "r": "0x223a7c9bcf5531c99be5ea7082183816eb20cfe0bbc322e97cc5c7f71ab8b20e",
+      "s": "0x2aadee6b34b45bb15bc42d9c09de4a6754e7000908da72d48cc7704971491663",
+      "hash": "0xeba2df809e7a612a0a0d444ccfa5c839624bdc00dd29e3340d46df3870f8a30e"
+    }
+  }
+}
+```
+The `raw` is the signed transaction in Recursive Length Prefix (RLP) encoded form. The `tx` is the signed transaction in JSON form
+
+With the signature hash, the transaction can be cryptographically proven that it came from the sender and submitted to the network.
 
 - [Anatomy of Smart-cCntracts](https://ethereum.org/en/developers/docs/smart-contracts/anatomy/):.
 
