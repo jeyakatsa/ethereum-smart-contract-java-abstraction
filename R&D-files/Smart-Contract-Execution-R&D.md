@@ -8,29 +8,7 @@ How to execute a Smart-Contract in Java
 1. *TBD*
 
 # Findings
-### How to Execute Solidity Smart-Contracts with RemixIDE via [Geeks for Geeks](https://www.geeksforgeeks.org/steps-to-execute-solidity-smart-contract-using-remix-ide/):
-
-- Step 1: Open Remix IDE on any of your browsers, select on the New File and click on Solidity to choose the environment. 
-
-[Remix IDE Startup Window]
-
-- Step 2: Write the Smart contract in the code section, and click the Compile button under the Compiler window to compile the contract. 
-
-[Compile Code]
-
-- Step 3: To execute the code, click on the Deploy button under Deploy and Run Transactions window. 
-
-[Deploy Code]
-
-- Step 4: After deploying the code click on the method calls under the drop-down of deployed contracts to run the program, and for output, check to click on the drop-down on the console.
-
-[Output Window]
-
-- Step 5: For debugging click on the Debug button corresponding to the method call in the console. Here you can check each function call and variable assignments. 
-
---------------------------
-
-### Deploying smart contracts via [Ethereum.org](https://github.com/ethereum/ethereum-org-website/blob/dev/src/content/developers/docs/smart-contracts/compiling/index.md)
+### Deploying smart contracts:
 
 You need to deploy your smart contract for it to be available to users of an Ethereum network.
 
@@ -38,9 +16,9 @@ To deploy a smart contract, you merely send an Ethereum transaction containing t
 
 ##### Prerequisites {#prerequisites}
 
-You should understand [Ethereum networks](/developers/docs/networks/), [transactions](/developers/docs/transactions/) and the [anatomy of smart contracts](/developers/docs/smart-contracts/anatomy/) before deploying smart contracts.
+You should understand [Ethereum networks](https://ethereum.org/en/developers/docs/networks/), [transactions](https://ethereum.org/en/developers/docs/transactions/) and the [anatomy of smart contracts](https://ethereum.org/en/developers/docs/smart-contracts/anatomy/) before deploying smart contracts.
 
-Deploying a contract also costs ether (ETH), so you should be familiar with [gas and fees](/developers/docs/gas/) on Ethereum.
+Deploying a contract also costs ether (ETH), so you should be familiar with [gas and fees](https://ethereum.org/en/developers/docs/gas/) on Ethereum.
 
 Finally, you'll need to compile your contract before deploying it, so make sure you've read about [compiling smart contracts](/developers/docs/smart-contracts/compiling/).
 
@@ -48,16 +26,16 @@ Finally, you'll need to compile your contract before deploying it, so make sure 
 
 ##### What you'll need {#what-youll-need}
 
-- your contract's bytecode – this is generated through [compilation](/developers/docs/smart-contracts/compiling/)
+- your contract's bytecode – this is generated through [compilation](https://ethereum.org/en/developers/docs/smart-contracts/compiling/)
 - ETH for gas – you'll set your gas limit like other transactions so be aware that contract deployment needs a lot more gas than a simple ETH transfer
 - a deployment script or plugin
-- access to an [Ethereum node](/developers/docs/nodes-and-clients/), either by running your own, connecting to a public node, or via an API key using a [node service](/developers/docs/nodes-and-clients/nodes-as-a-service/) like Infura or Alchemy
+- access to an [Ethereum node](https://ethereum.org/en/developers/docs/nodes-and-clients/), either by running your own, connecting to a public node, or via an API key using a [node service](https://ethereum.org/en/developers/docs/nodes-and-clients/nodes-as-a-service/) like Infura or Alchemy
 
 #### Steps to deploy a smart contract {#steps-to-deploy}
 
 The specific steps involved will depend on the tooling you use. For an example, check out the [Hardhat documentation on deploying your contracts](https://hardhat.org/guides/deploying.html) or [Truffle documentation on networks and app deployment](https://www.trufflesuite.com/docs/truffle/advanced/networks-and-app-deployment). These are two of the most popular tools for smart contract deployment, which involve writing a script to handle the deployment steps.
 
-Once deployed, your contract will have an Ethereum address like other [accounts](/developers/docs/accounts/).
+Once deployed, your contract will have an Ethereum address like other [accounts](https://ethereum.org/en/developers/docs/accounts/).
 
 #### Related tools {#related-tools}
 
@@ -87,27 +65,18 @@ Once deployed, your contract will have an Ethereum address like other [accounts]
 
 #### Related tutorials {#related-tutorials}
 
-- [Deploying your first smart contract](/developers/tutorials/deploying-your-first-smart-contract/) _– An introduction to deploying your first smart contract on an Ethereum test network._
-- [Interact with other contracts from Solidity](/developers/tutorials/interact-with-other-contracts-from-solidity/) _– How to deploy a smart contract from an existing contract and interact with it._
-- [How to downsize your contract size](/developers/tutorials/downsizing-contracts-to-fight-the-contract-size-limit/) _- How to reduce your contract's size to keep it under the limit and save on gas_
+- [Deploying your first smart contract](https://ethereum.org/en/developers/tutorials/deploying-your-first-smart-contract/) _– An introduction to deploying your first smart contract on an Ethereum test network._
+- [Interact with other contracts from Solidity](https://ethereum.org/en/developers/tutorials/interact-with-other-contracts-from-solidity/) _– How to deploy a smart contract from an existing contract and interact with it._
+- [How to downsize your contract size](https://ethereum.org/en/developers/tutorials/downsizing-contracts-to-fight-the-contract-size-limit/) _- How to reduce your contract's size to keep it under the limit and save on gas_
 
 #### Further reading {#further-reading}
 
 - [https://docs.openzeppelin.com/learn/deploying-and-interacting](https://docs.openzeppelin.com/learn/deploying-and-interacting) - _OpenZeppelin_
 - [Deploying your contracts with Hardhat](https://hardhat.org/guides/deploying.html) - _Nomic Labs_
 
-_Know of a community resource that helped you? Edit this page and add it!_
-
-#### Related topics {#related-topics}
-
-- [Development frameworks](/developers/docs/frameworks/)
-- [Run an Ethereum node](/developers/docs/nodes-and-clients/run-a-node/)
-
-
-[Debugging Code]
-##### Test Case/s:
+# Test Case/s:
 *TBD*
-### Solution:
+# Solution/s:
 *TBD*
 
 -----------------------------------------------------------------------
