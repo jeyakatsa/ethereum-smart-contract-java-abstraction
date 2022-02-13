@@ -14,9 +14,36 @@ You need to deploy your smart contract for it to be available to users of an Eth
 
 To deploy a smart contract, you merely send an Ethereum transaction containing the compiled code of the smart contract without specifying any recipient.
 
+#### How to deploy a smart contract
+
+##### What you'll need
+
+- The contract's bytecode: this is generated through the `javac` git command as follows: `javac MySmartContract.java`
+- [Web3j: A Java Library for iterating through Solidity contracts](https://github.com/web3j/web3j) 
+- ETH for gas: you'll set your gas limit like other transactions so be aware that contract deployment needs a lot more gas than a simple ETH transfer
+- Truffle Deployment Network. 
+- Access to an [Ethereum node](https://ethereum.org/en/developers/docs/nodes-and-clients/), either by running your own, connecting to a public node, or via an API key using a [node service](https://ethereum.org/en/developers/docs/nodes-and-clients/nodes-as-a-service/) like Infura or Alchemy
+
+#### Steps to deploy a smart contract
+
+The specific steps involved will depend on the tooling you use. For an example, check out the [Hardhat documentation on deploying your contracts](https://hardhat.org/guides/deploying.html) or [Truffle documentation on networks and app deployment](https://www.trufflesuite.com/docs/truffle/advanced/networks-and-app-deployment). These are two of the most popular tools for smart contract deployment, which involve writing a script to handle the deployment steps.
+
+Once deployed, your contract will have an Ethereum address like other [accounts](https://ethereum.org/en/developers/docs/accounts/).
+
+
+
+
+
+
+---------------------------------------------------------------------------
+
+
 ##### Prerequisites
 
 Understanding...
+
+
+
 
 **[Ethereum networks](https://ethereum.org/en/developers/docs/networks/)**: Networks are different Ethereum environments you can access for development, testing, or production use cases.  
 - Public networks: Accessible to anyone in the world with an internet connection. Anyone can read or create transactions on a public blockchain and validate the transactions being executed. Agreement on transactions and the state of the network is decided by a consensus of peers. 
@@ -30,6 +57,11 @@ Understanding...
 - - - - - [FaucETH](https://fauceth.komputing.org/)
 - - - - - [Gorli faucet](https://faucet.goerli.mudit.blog/)
 - Private networks: An Ethereum network is a private network if its nodes are not connected to a public network (i.e. Mainnet or a testnet). In this context, private only means reserved or isolated, rather than protected or secure.
+
+
+
+
+
 
 **[Transactions](https://ethereum.org/en/developers/docs/transactions/)**: Transactions are cryptographically signed instructions from accounts. An account will initiate a transaction to update the state of the Ethereum network. The simplest transaction is transferring ETH from one account to another. Transactions require a fee and must be mined to become valid. To make this overview simpler we'll cover gas fees and mining elsewhere. A submitted transaction includes the following information:
 - Recipient: The receiving address (if an externally-owned account, the transaction will transfer value. If a contract account, the transaction will execute the contract code)
@@ -117,28 +149,49 @@ Once the transaction has been submitted the following happens:
 - Recent blocks may get re-organized, giving the impression the transaction was unsuccessful; however, the transaction may still be valid but included in a different block.
 - The probability of a re-organization diminishes with every subsequent block mined, i.e. the greater the number of confirmations, the more immutable the transaction is.
 
-**[Anatomy of Smart-Contracts](https://ethereum.org/en/developers/docs/smart-contracts/anatomy/)**:.
 
-Deploying a contract also costs ether (ETH), so you should be familiar with [gas and fees](https://ethereum.org/en/developers/docs/gas/) on Ethereum.
 
-Finally, you'll need to compile your contract before deploying it, so make sure you've read about [compiling smart contracts](/developers/docs/smart-contracts/compiling/).
 
-#### How to deploy a smart contract
 
-##### What you'll need
+**[Anatomy of Smart-Contracts](https://ethereum.org/en/developers/docs/smart-contracts/anatomy/)**: A smart contract is a program that runs at an address on Ethereum. They're made up of data and functions that can execute upon receiving a transaction. You need to have enough ETH to deploy your contract. Deploying a smart contract is technically a transaction, so you need to pay your Gas in the same way that you need to pay gas for a simple ETH transfer. Gas costs for contract deployment are far higher, however.
 
-- your contract's bytecode – this is generated through [compilation](https://ethereum.org/en/developers/docs/smart-contracts/compiling/)
-- ETH for gas – you'll set your gas limit like other transactions so be aware that contract deployment needs a lot more gas than a simple ETH transfer
-- a deployment script or plugin
-- access to an [Ethereum node](https://ethereum.org/en/developers/docs/nodes-and-clients/), either by running your own, connecting to a public node, or via an API key using a [node service](https://ethereum.org/en/developers/docs/nodes-and-clients/nodes-as-a-service/) like Infura or Alchemy
+Composability: Smart contracts are public on Ethereum and can be thought of as open APIs. That means you can call other smart contracts in your own smart contract to greatly extend what's possible. Contracts can even deploy other contracts.
 
-#### Steps to deploy a smart contract
+ACCOUNT TYPES: Ethereum has two account types:
+- Externally-owned: controlled by anyone with the private keys.
+- Contract: a smart contract deployed to the network, controlled by code.
 
-The specific steps involved will depend on the tooling you use. For an example, check out the [Hardhat documentation on deploying your contracts](https://hardhat.org/guides/deploying.html) or [Truffle documentation on networks and app deployment](https://www.trufflesuite.com/docs/truffle/advanced/networks-and-app-deployment). These are two of the most popular tools for smart contract deployment, which involve writing a script to handle the deployment steps.
+Both account types have the ability to:
+- - Receive, hold and send ETH and tokens
+- - Interact with deployed smart contracts
 
-Once deployed, your contract will have an Ethereum address like other [accounts](https://ethereum.org/en/developers/docs/accounts/).
+Differences...
 
-#### Related tools
+Externally-owned
+- Creating an account costs nothing
+- Can initiate transactions
+- Transactions between externally-owned accounts can only be ETH/token transfers
+
+Contract
+- Creating a contract has a cost because you're using network storage
+- Can only send transactions in response to receiving a transaction
+- Transactions from an external account to a contract account can trigger code which can execute many different actions, such as transferring tokens or even creating a new contract.
+
+Ethereum accounts have four fields:
+
+- `nonce`: A counter that indicates the number of transactions sent from the account. This ensures transactions are only processed once. In a contract account, this number represents the number of contracts created by the account.
+- `balance`: The number of wei owned by this address. Wei is a denomination of ETH and there are 1e+18 wei per ETH.
+- `codeHash`: This hash refers to the code of an account on the Ethereum virtual machine (EVM). Contract accounts have code fragments programmed in that can perform different operations. This EVM code gets executed if the account gets a message call. It cannot be changed, unlike the other account fields. All such code fragments are contained in the state database under their corresponding hashes for later retrieval. This hash value is known as a codeHash. For externally owned accounts, the codeHash field is the hash of an empty string.
+- `storageRoot`: Sometimes known as a storage hash. A 256-bit hash of the root node of a Merkle Patricia trie that encodes the storage contents of the account (a mapping between 256-bit integer values), encoded into the trie as a mapping from the Keccak 256-bit hash of the 256-bit integer keys to the RLP-encoded 256-bit integer values. This trie encodes the hash of the storage contents of this account, and is empty by default.
+
+More info can be found here:
+- [Smart-Contract Anatomy](https://ethereum.org/en/developers/docs/smart-contracts/anatomy/).
+- [Gas & Fees](https://ethereum.org/en/developers/docs/gas/)
+
+
+-------------------------------------------------------------
+
+#### Tools to deploy smart-contracts
 
 **Remix - _Remix IDE allows developing, deploying and administering smart contracts for Ethereum like blockchains_**
 
@@ -175,9 +228,4 @@ Once deployed, your contract will have an Ethereum address like other [accounts]
 - [https://docs.openzeppelin.com/learn/deploying-and-interacting](https://docs.openzeppelin.com/learn/deploying-and-interacting) - _OpenZeppelin_
 - [Deploying your contracts with Hardhat](https://hardhat.org/guides/deploying.html) - _Nomic Labs_
 
-# Test Case/s:
-*TBD*
-# Solution/s:
-*TBD*
 
------------------------------------------------------------------------
