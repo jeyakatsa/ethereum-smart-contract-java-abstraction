@@ -13,13 +13,27 @@ How to compile Java Smart-Contracts into EVM bytecode
 
 ### Start building the compile script
 
-The aim of the script is to generate one JSON per contract (in this case we will finish the compile process with three JSON), each of them containing the compiled contract information. These JSON will be stored in an output path called build/
+The aim of the script is to generate one JSON per contract (in this case we will finish the compile process with three JSON), each of them containing the compiled contract information. These JSON will be stored in an output path.
 
 The steps for building our script are the following:
 
-1. Create the build/ directory.
-2. Get the sources of our contracts.
-3. Compile the contracts and write the output to a file.
+1. Create the a new directory.
+
+##### Convert this into Java:
+```javascript
+const path = require('path');
+const fs = require('fs-extra');
+
+const builPath = path.resolve('ethereum', 'build');
+
+const createBuildFolder = () => {
+	fs.emptyDirSync(builPath);
+}
+```
+**The Process:** TBD
+
+3. Get the sources of our contracts.
+4. Compile the contracts and write the output to a file.
 
 #### Step 1 - Create the build/ folder
 This step is the simplest due we only need to know some basics of Java (no Ethereum concepts needed here).
