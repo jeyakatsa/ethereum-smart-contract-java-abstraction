@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7c8fbcd-fa4f-4f18-8ec3-0d2103102662" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/smart-contract-compilation-scripts/compile-outputDir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Sig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/smart-contract-dependencies/src/main/java/Value.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R&amp;D-files/Data-Dependency-R&amp;D.md" beforeDir="false" afterPath="$PROJECT_DIR$/r&amp;d-files/Data-Dependency-R&amp;D.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R&amp;D-files/Sender-Dependency-R&amp;D.md" beforeDir="false" afterPath="$PROJECT_DIR$/r&amp;d-files/Sender-Dependency-R&amp;D.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R&amp;D-files/Value-Dependency-R&amp;D.md" beforeDir="false" afterPath="$PROJECT_DIR$/r&amp;d-files/Value-Dependency-R&amp;D.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
