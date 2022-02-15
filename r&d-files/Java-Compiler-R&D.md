@@ -30,10 +30,32 @@ const createBuildFolder = () => {
 	fs.emptyDirSync(builPath);
 }
 ```
-**The Process:** TBD
+**The Process:**
 
-3. Get the sources of our contracts.
-4. Compile the contracts and write the output to a file.
+In Java, to declare any variable as constant, we use `static` and `final` modifiers. It is also known as non-access modifiers. According to the Java naming convention
+the identifier name must be in capital letters.
+
+Static and Final Modifiers:
+- The purpose to use the static modifier is to manage the memory.
+- It also allows the variable to be available without loading any instance of the class in which it is defined.
+- The final modifier represents that the value of the variable cannot be changed. It also makes the primitive data type immutable or unchangeable.
+ 
+The syntax to declare a constant is as follows:
+
+```java
+static final datatype identifier_name=value;
+```
+
+For example, price is a variable that we want to make constant.
+
+```java
+static final double PRICE=432.78;
+```
+
+Where static and final are the non-access modifiers. The double is the data type and PRICE is the identifier name in which the value 432.78 is assigned.
+
+2. Get the sources of our contracts.
+3. Compile the contracts and write the output to a file.
 
 #### Step 1 - Create the build/ folder
 This step is the simplest due we only need to know some basics of Java (no Ethereum concepts needed here).
