@@ -54,6 +54,43 @@ static final double PRICE=432.78;
 
 Where static and final are the non-access modifiers. The double is the data type and PRICE is the identifier name in which the value 432.78 is assigned.
 
+**How to convert `require` into a Java program (or keyword)?**
+
+Node.js follows the CommonJS module system, and the builtin require function is the easiest way to include modules that exist in separate files. The basic functionality of require is that it reads a JavaScript file, executes the file, and then proceeds to return the exports object. An example module:
+
+```javascript
+console.log("evaluating example.js");
+
+var invisible = function () {
+  console.log("invisible");
+}
+
+exports.message = "hi";
+
+exports.say = function () {
+  console.log(exports.message);
+}
+```
+
+So if you run var example = require('./example.js'), then example.js will get evaluated and then example be an object equal to:
+
+```javascript
+{
+  message: "hi",
+  say: [Function]
+}
+```
+
+If you want to set the exports object to a function or a new object, you have to use the module.exports object. So for an example:
+
+```javascript
+module.exports = function () {
+  console.log("hello world")
+}
+
+require('./example2.js')() //require itself and run the exports object
+```
+
 2. Get the sources of our contracts.
 3. Compile the contracts and write the output to a file.
 
