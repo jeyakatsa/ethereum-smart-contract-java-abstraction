@@ -122,7 +122,7 @@ static final datatype createBuildFolder = () => {
     fs.emptyDirSync(buildpath);
         }
 ```
-To be tested againt Node.js server implementation.
+To be tested against Node.js server implementation.
 
 # Solution:
 TBD
