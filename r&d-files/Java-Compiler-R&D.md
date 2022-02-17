@@ -5,7 +5,7 @@
 How to compile Java Smart-Contracts into EVM bytecode
 
 #### Hypothesis:
-1. Build a Compile Script within the Java Abstraction Project.
+1. Build a Compile Script within the Java Abstraction Project. Essentially, have to "deconstruct an engine in order to reconstruct it into one capable of running on the EVM".
 
 # Findings:
 
@@ -56,7 +56,7 @@ Where static and final are the non-access modifiers. The double is the data type
 
 **How to convert `require` into a Java program (or keyword)?**
 
-Node.js follows the CommonJS module system, and the builtin require function is the easiest way to include modules that exist in separate files. The basic functionality of require is that it reads a JavaScript file, executes the file, and then proceeds to return the exports object. An example module:
+Node.js follows the CommonJS module system, and the builtin `require` function is the easiest way to include modules that exist in separate files. The basic functionality of `require` is that it reads a JavaScript file, executes the file, and then proceeds to return the `exports` object. An example module:
 
 ```javascript
 console.log("evaluating example.js");
@@ -72,7 +72,7 @@ exports.say = function () {
 }
 ```
 
-So if you run var example = require('./example.js'), then example.js will get evaluated and then example be an object equal to:
+So if you run `var example = require('./example.js')`, then `example.js` will get evaluated and then `example` be an object equal to:
 
 ```javascript
 {
@@ -112,7 +112,17 @@ First of all, we have to define an object that will serve as an input of informa
 - Settings : this option tells the compiler what fields of the output we want to be generated. For this example I have choose to generate the abi and the evm.bytecode for all of our files in sources. This two piece of information are the necessary in the Deploy phase.
 
 # Test Case/s: 
-TBD
+```java
+static final datatype path = require('path');
+static final datatype fs = require('fs-extra');
+
+static final datatype buildPath = path.resolve('ethereum', 'build');
+
+static final datatype createBuildFolder = () => {
+    fs.emptyDirSync(buildpath);
+        }
+```
+To be tested againt Node.js server implementation.
 
 # Solution:
 TBD
