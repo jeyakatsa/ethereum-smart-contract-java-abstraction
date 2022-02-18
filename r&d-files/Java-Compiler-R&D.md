@@ -92,7 +92,26 @@ require('./example2.js')() //require itself and run the exports object
 ```
 
 2. Get the sources of our contracts.
-3. Compile the contracts and write the output to a file.
+
+#### Convert this into java:
+```javascript
+const contracstFolderPath = path.resolve('ethereum', 'contracts');
+
+const buildSources = () => {
+  const sources = {};
+  const contractsFiles = fs.readdirSync(contractsFolderPath);
+  
+  contractsFiles.forEach(file => {
+    const contractFullPath = path.resolve(contractsFolderPath, file);
+    sources[file] = {
+      content: fs.readFileSync(contractFullPath, 'utf8')
+    };
+  });
+  
+  return sources;
+}
+```
+4. Compile the contracts and write the output to a file.
 
 #### Step 1 - Create the build/ folder
 This step is the simplest due we only need to know some basics of Java (no Ethereum concepts needed here).
