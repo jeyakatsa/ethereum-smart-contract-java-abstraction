@@ -111,6 +111,18 @@ const buildSources = () => {
   return sources;
 }
 ```
+**The Process:**
+
+The path.resolve() method is used to resolve a sequence of path-segments to an absolute path. It works by processing the sequence of paths from right to left, prepending each of the paths until the absolute path is created. The resulting path is normalized and trailing slashes are removed as required.
+If no path segments are given as parameters, then the absolute path of the current working directory is used.
+Syntax: 
+
+path.resolve( [...paths] )
+Parameters: This function accepts one parameter as mentioned above and described below: 
+
+paths: It is a series of file paths that would be resolved together to form an absolute path. It throws a TypeError if this parameter is not a string value.
+Return Value: It returns a string with absolute path.
+
 4. Compile the contracts and write the output to a file.
 
 #### Step 1 - Create the build/ folder
@@ -130,18 +142,7 @@ First of all, we have to define an object that will serve as an input of informa
 - Sources : the content of our contracts.
 - Settings : this option tells the compiler what fields of the output we want to be generated. For this example I have choose to generate the abi and the evm.bytecode for all of our files in sources. This two piece of information are the necessary in the Deploy phase.
 
-# Test Case/s: 
-```java
-static final datatype path = require('path');
-static final datatype fs = require('fs-extra');
 
-static final datatype buildPath = path.resolve('ethereum', 'build');
-
-static final datatype createBuildFolder = () => {
-    fs.emptyDirSync(buildpath);
-        }
-```
-To be tested against Node.js server implementation.
 
 # Solution:
 TBD
