@@ -123,6 +123,32 @@ Parameters: This function accepts one parameter as mentioned above and described
 paths: It is a series of file paths that would be resolved together to form an absolute path. It throws a TypeError if this parameter is not a string value.
 Return Value: It returns a string with absolute path.
 
+Example in JavaScript
+```javascript
+// Node.js program to demonstrate the   
+// path.resolve() Method  
+  
+// Import the path module
+const path = require('path');
+   
+console.log("Current directory:", __dirname);
+   
+// Resolving 2 path-segments
+// with the current directory
+path1 = path.resolve("users/admin", "readme.md");
+console.log(path1)
+   
+// Resolving 3 path-segments
+// with the current directory
+path2 = path.resolve("users", "admin", "readme.md");
+console.log(path2)
+   
+// Treating of the first segment
+// as root, ignoring the current directory
+path3 = path.resolve("/users/admin", "readme.md");
+console.log(path3)
+```
+
 4. Compile the contracts and write the output to a file.
 
 #### Step 1 - Create the build/ folder
