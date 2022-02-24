@@ -1,3 +1,6 @@
+### This project has been forked up to: [Jehova: A Smart Contract Language for Java Developers](https://github.com/jeyakatsa/Jehova) 
+______________________________________________________________________________
+
 # Java Smart Contract Abstraction Research & Development
 
 ### To allow the building of smart contracts in Java on Ethereum
